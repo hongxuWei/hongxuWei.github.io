@@ -16,7 +16,7 @@ Promise 有 3 种状态 `pending` （正在进行）`fulfilled` (成功) `reject
 一图胜千言
 ![Promise图解](promise.png)
 
-### 用法
+## 1. 用法
 
 Promise 对象是一个构造函数，用来生成 Promise 实例。
 
@@ -35,7 +35,7 @@ const promise = new Promise((resolve, reject)=>{
 
 `reject` 函数的作用是，将 `Promise`对象的状态从 `pending` 变为 `rejected` 状态，在异步操作失败时调用，并将异步操作报出的错误作为参数传递。
 
-## Promise.prototype.then()
+## 2. Promise.prototype.then()
 Promise 实例生成之后就可以调用 then 方法分别指定 fulfilled 状态和 rejected 状态的回调函数。
 
 ```JavaScript
@@ -47,18 +47,18 @@ promise.then((value)=>{
 ```
 如上所示，then 方法可以接受两个参数，分别对应的是 `fulfilled` 状态的回调函数和 `rejected` 状态的回调函数。其中 `rejected` 状态的回调函数是可选参数。
 
-### Promise.prototype.catch()
+## 3. Promise.prototype.catch()
 相当于 `promise.then(null, rejection)` 用于指定异步操作失败时候的回调函数。
 
 **注意：如果 Promise 的状态已经是fulfilled的话，再抛出错误则不会调用 rejection函数**
 
 **Promise对象的错误具有“冒泡”性质，会一直向后传递，知道被捕获为止**
 
-### Promise.prototype.finnaly()
+## 4. Promise.prototype.finnaly()
 `finally` 方法用于不论 Promise 对象的状态如何，都会执行的操作。（ES2018)
 
-### Promise.all()
-用于将多个 Promise 实例，包装成一个心得 Promise 实例。
+## 5. Promise.all()
+用于将多个 Promise 实例，包装成一个新的 Promise 实例。
 
 ```JavaScript
 const p = Promise([p1, p2, p3]);
@@ -68,17 +68,17 @@ Promise.all 方法接受一个数组作为参数，数组内都是 Promise 实�
 （假设成功为true, 失败为false）
 `p = p1 && p2 && p3` 即 p1, p2, p3的状态都是 fulfilled 时 p 的状态才是 fulfilled。只要其中一个状态是 rejected, 那么 p 的状态就为 rejected。
 
-### Promise.race()
+## 6. Promise.race()
 Promise.race 方法同 Promise.all 类似。只不过公式换为 `p = p1 || p2 || p3`
 
-### Promise.resolve()
+## 7. Promise.resolve()
 将现有对象转为 Promise 对象
 * 参数是 `Promise` 实例，该方法不做任何处理，直接返回该实例。
 * 参数是一个 `thenable` 对象，该方法会将对象转为 Promise 对象，然后执行 thenable 对象的 then 方法。
 * 参数不是具有 then 方法的对象或根本不是对象，该方法返回一个新的 Promise 对象，状态为 `fulfilled`。
 * 没有参数，该方法返回一个新的 Promise 对象，状态为 `fulfilled`。
 
-### Promise.reject()
+## 8. Promise.reject()
 该方法会返回一个新的 Promise 实例，该实例的状态为 rejected。
 
 **注意：该方法的参数，会作为reject的理由变成后续方法的参数。**

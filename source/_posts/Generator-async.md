@@ -27,7 +27,7 @@ test.next(); //{value: undefined, done: true}
 ```
 调用 `demo` 后函数并不会执行，返回的也不是函数运行的结果，而是一个指向内部状态的指针，只有当调用遍历器对象的 `next()` 方法，内部指针就从函数头或者上一次停下来的地方执行，知道遇到下一个 yield 表达式或者 return 语句为止。
 
-### yield 表达式
+## 1. yield 表达式
 类似 Generator 函数的一个内部暂停标志。
 
 Generator 函数就像一条马路，而 yield 是这条马路上的红绿灯路口，next 方法是站在每个路口指挥的交警。只有交警同意车辆通过后，才会执行相应的函数。
@@ -42,7 +42,7 @@ next 方法的运行逻辑有以下几点：
 **注意：Generator 函数可以不必使用 yield。但是如果使用 yield 就必须在 Generator 函数里面，否则会报错。<br>`yield` 表达式如果用在另一个表达式之中，必须添加在圆括号里面。 `console.log('Hello' + (yield));`**
 
 
-### 与 Iterator
+## 2. Generator 与 Iterator
 
 任意一个对象的 `Symbol.iterator` 方法，等于该对象的遍历器生成函数，调用该函数会返回该对象的一个遍历器对象。
 
@@ -56,7 +56,7 @@ var g = demo();
 g[Symbil.iterator] === g; // true
 ```
 
-### next 方法的参数
+## 3. next 方法的参数
 
 `yield` 表达式本省没有返回值，或者说总是返回 `undefined`。 `next` 方法可以带一个参数，该参数就会被当做上一个 `yield` 表达式的返回值。
 

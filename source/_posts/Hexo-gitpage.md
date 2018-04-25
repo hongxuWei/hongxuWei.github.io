@@ -8,7 +8,7 @@ categories: GitHub
 
 之前面试感觉自己的技术沉淀还是不够。目前打算用博客记录自己的学习心得。之前一直是用云笔记记录。现在改用gitpage + hexo，一方面GitHub 的提交记录方便自己查看更新状态，能够对自己有个审视。另一方面，放在github上方便别人阅读查看和共享。
 
-### 1. 用 GitHub 创建一个 Repository.
+## 1. 用 GitHub 创建一个 Repository.
 
 * 登录 GitHub 主页。点击 New Repository
 
@@ -21,7 +21,7 @@ categories: GitHub
 在新建的仓库下创建一个 index.html 静态文件。以我自己为例，登录 [https://hongxuwei.github.io](https://hongxuwei.github.io)  (协议类型https不要省略)
 如果可以访问那么第一步就完成了。
 
-### 2. 本地下载 hexo
+## 2. 本地下载 hexo
 
 ```bash
 npm install hexo-cli -g
@@ -33,7 +33,7 @@ hexo s # 开启本地预览 http://localhost:4000/
 ```
 这样我们就可以愉快的用 markdown 写博客啦。
 
-### 3. 部署 hexo 到 gitpage
+## 3. 部署 hexo 到 gitpage
 
 安装插件
 ```

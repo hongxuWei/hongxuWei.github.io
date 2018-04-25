@@ -6,7 +6,7 @@ categories: ES6 Generator async
 ---
 # Generator
 
-### for...of 循环
+## 4. for...of 循环
 
 `for...of` 循环可以自动遍历 Gnerator 函数生成的 `Iterator` 对象，而且这个时候不需要调用 `next` 方法。
 
@@ -65,19 +65,19 @@ for (let n of num()) {
 // 2
 ```
 
-### Generator.prototype.throw()
+## 5. Generator.prototype.throw()
 
 在函数体外抛出错误，然后在 Geneartor 函数体内部捕获。
 
 **Note: `throw` 方法会默认执行一次 `next`**
 
-### Generator.prototype.return()
+## 6. Generator.prototype.return()
 
 可以返回给定的值，并终结遍历 Generator 函数。
 
 **Note: 如果函数内部有 `try...finally` 代码块，那么 `return` 方法会推迟到 `finally` 代码块执行完再执行**
 
-### next() throw() return() 的共同点
+## 7. next() throw() return() 的共同点
 
 `next()` `throw()` `return()` 三个方法本质是同一件事，可以放在一起理解，它们的作用都是让 Generator 函数恢复执行，并且使用不同的语句替换 `yield` 表达式。
 
@@ -87,7 +87,7 @@ for (let n of num()) {
 
 `return` 是将 `yield` 表达式替换成 `return` 语句
 
-### yield* 表达式
+## 8. yield* 表达式
 
 如果在 Generator 函数内部抵用另外一个 Generator 函数，默认情况下是没有效果的。这时候就需要用到 `yield*` 表达式，用来在一个 Generator 函数里面执行另一个 Generator 函数。
 
