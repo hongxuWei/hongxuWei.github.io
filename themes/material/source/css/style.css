@@ -381,18 +381,16 @@ a {
     background: transparent;
 }
 #post-content pre {
-    background-color: #f7f7f7;
+    background-color: #272822;
+    color: #f8f8f2;
     font-size: 13px;
     line-height: 19px;
     overflow: auto;
     padding: 16px;
-    border-radius: 3px;
 }
 #post-content .gutter,
 #post-content .code {
-    /*  background: #f7f7f7;*/
-
-    font-size: 13px;
+    font-size: 15px;
     line-height: 19px;
     overflow: auto;
     padding: 0;
@@ -420,7 +418,27 @@ a {
     background-color: transparent;
     border: none;
 }
-
+#post-content .gutter pre{
+    color: #90908a;
+}
+#post-content .code .keyword{
+    color: #f92672;
+}
+#post-content .code .title{
+    color: #a6e22e;
+}
+#post-content .code .params{
+    color: #fd971f;
+}
+#post-content .code .build_in{
+    color: #66d9ef;
+}
+#post-content .code .number{
+    color: #ae81ff;
+}
+#post-content .code .comment{
+    color: #75715e;
+}
 .post-toc-wrap::-webkit-scrollbar{
     width: 7px;
     height: 7px;
