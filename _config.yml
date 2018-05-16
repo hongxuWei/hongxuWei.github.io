@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: 水平垂直居中
+  message: Add gitcomment
 
 # Search
 search:
