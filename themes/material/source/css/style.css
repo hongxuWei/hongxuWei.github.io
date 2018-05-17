@@ -419,6 +419,7 @@ a {
     border: none;
 }
 #post-content .gutter pre{
+    border-right: 1px solid #555;
     color: #90908a;
 }
 #post-content .code .keyword{
@@ -930,7 +931,7 @@ a {
     font-weight: 400
 }
 #scheme-Paradox .footer-develop-a:hover {
-    color: #0097a7;
+    color: #00bcd4;
     text-decoration: underline!important
 }
 #scheme-Paradox #post_entry-info {
@@ -2610,7 +2611,7 @@ a {
 /*****************/
 /* Nprogress_CSS */
 /*****************/
- -#nprogress {
+#nprogress {
     pointer-events: none
 }
 #nprogress .bar {

@@ -3367,7 +3367,14 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
   width: 100%;
   background: 16px;
   text-align: left;
-  color: inherit
+  color: inherit;
+  outline: none;
+}
+
+@media screen and (max-width: 480px) {
+  .mdl-textfield__input {
+      color: #fff;
+  }
 }
 
 .mdl-textfield.is-focused .mdl-textfield__input {
@@ -3464,14 +3471,13 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
 }
 
 .mdl-textfield__expandable-holder {
-  display: inline-block;
   position: relative;
-  margin-left: 32px;
+  float: right;
+  margin-right: 84px;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
   -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  display: inline-block;
   max-width: .1px
 }
 
