@@ -44,6 +44,85 @@ React引入了一些激动人心的新概念，向现有的一些最佳实践发
 
 **好吧其实也没多少。甚至说只有一点就是组件化**
 
+## Hello JSX
+**JSX** 语法，像是在 `JavaScript` 代码里直接写 *XML* 的语法，实质上这只是一个语法糖，每一个 *XML* 标签都会被 **JSX** 转换工具转换成纯 `JavaScript` 代码，React 官方推荐使用 **JSX** ， 当然你想直接使用纯 `JavaScript` 代码写也是可以的，只是使用 **JSX** ，组件的结构和组件之间的关系看上去更加清晰。
+
+```JavaScript
+//使用JSX
+React.render(
+    <div>
+        <div>
+            <div>content</div>
+        </div>
+    </div>,
+    document.getElementById('example')
+);
+
+//不使用JSX
+React.render(
+    React.createElement('div', null,
+        React.createElement('div', null,
+            React.createElement('div', null, 'content')
+        )
+    ),
+    document.getElementById('example')
+);
+```
+
+其实我们在 **JSX** 里写一个 *XML* 标签，就是在调用 `React.createElement` 这个方法，并返回一个 `ReactElement` 对象。
+
+### JSX 中嵌入表达式
+
+可以用花括号把任意的 `JavaScript 表达式` 嵌入到 **JSX** 。
+
+```JavaScript
+function formatName(user) {
+    return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+    firstName: 'Harper',
+    lastName: 'Perez'
+};
+
+const ele = (
+    <h1> Hello, {formatName(user)}!</h1>
+);
+
+ReactDOM.render(
+    ele,
+    document.getElementById('root')
+);
+```
+
+### JSX 也是一个表达式
+
+编译之后，**JSX** 表达式就变成了常规的 `JavaScript 对象`
+
+这意味着可以在 `if` 语句或是 `for` 循环中使用 **JSX** ，用它给变量赋值，当做参数接收，或则作为函数返回值。
+
+```JavaScript
+function getGreeting(user) {
+    if (user) {
+        return <h1>Hello, {formatName(user)}!</h1>
+    }
+    return <h1>Hello, Stranger.</h1>
+}
+```
+
+### 用 JSX 指定属性值
+
+可以使用双引号来指定字符串字面量作为属性值：
+
+```Javascript
+const element = <div tableIndex="0"></div>
+```
+
+也可以使用花括号嵌入一个 JavaScript 表达式作为属性值：
+
+```JavaScript
+const element = <img src={user.avatarUrl}></img>;
+```
 
 ## 新开一栏
 
