@@ -3,6 +3,7 @@ title: React 1
 date: 2018-05-22 14:01:33
 tags: React
 categories: React
+thumbnail: /img/React.png
 ---
 # React
 
@@ -42,7 +43,9 @@ React引入了一些激动人心的新概念，向现有的一些最佳实践发
 
 `React` 的数据绑定是单向的。数据和视图进行了绑定，当数据变化时，视图自动更新，不用再操作，提升开发效率。
 
-**好吧其实也没多少。甚至说只有一点就是组件化**
+#### ...
+
+**好吧其实也没多少。甚至说只有一点就是组件化，解决业务中的痛点。**
 
 ## Hello JSX
 **JSX** 语法，像是在 `JavaScript` 代码里直接写 *XML* 的语法，实质上这只是一个语法糖，每一个 *XML* 标签都会被 **JSX** 转换工具转换成纯 `JavaScript` 代码，React 官方推荐使用 **JSX** ， 当然你想直接使用纯 `JavaScript` 代码写也是可以的，只是使用 **JSX** ，组件的结构和组件之间的关系看上去更加清晰。
@@ -124,7 +127,309 @@ const element = <div tableIndex="0"></div>
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-## 新开一栏
+***JSX 使用时应该注意自闭合，class 关键字用 className 替代，单容器包裹等。***
+
+
+## Components & Props
+
+组件化将 UI 分为一个个独立可复用的小部件。
+
+### 函数式组件和类组件
+
+定义组件的方式有两种，一个是写一个 JavaScript 函数或是用 ES6 来定义一个组件。
+
+下面这两种组件在 `React` 看来是等价的。（注意下面组件的命名，首字母大写）
+
+```JavaScript
+function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+}
+```
+
+```JavaScript
+class Welcome extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return <h1>Hello, {this.props.name}</h1>;
+    }
+}
+```
+### 渲染一个组件
+
+React 元素可以是
+
+```JavaScript
+const element = <div />;
+```
+
+也可以是用户自定义的组件
+
+```JavaScript
+const element = <Welcome name="Sara" />; //注意自闭合
+```
+
+其中 JSX 的属性以一个单独对象 `props` 传递给对应的组件。
+
+***Note: `props` 是只读的，React 组件都必须是纯函数，并且禁止修改自身 props。***
+
+
+## 状态和生命周期
+
+有下面这样一个组件每秒会更新时间
+
+```JavaScript
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            date: new Date(),
+            name: "Sara"
+        };
+    }
+
+    componentDidMount() {
+        this.timerID = setInterval(
+            () => this.tick(),
+            1000
+        );
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timerID);
+    }
+
+    tick() {
+        this.setState({date: new Date()})
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>Hello, {this.state.name}.</h1>
+                <h2>Time is {this.state.date.toLocalTimeString()}.</h2>
+            </div>
+        );
+    }
+}
+```
+
+### state
+
+关于 state 有下面几点要注意
+
+#### 1. 不要直接修改 state 而是调用 setState 去更新
+
+```JavaScript
+this.state.name = "Bob"; // 错误，这样视图不会更新
+this.setState({name: "Bob"}); // OK
+```
+
+#### 2. state 更新可能是异步的
+
+React 为了优化性能会将多个 `setState()` 调用合并。
+
+`this.props` 和 `this.state` 可能是异步更新，所以不能依赖他们的值去计算下一个 **state**
+
+```JavaScript
+this.setState({
+    counter: this.state.counter + this.props.increment // 可能会导致更新失败
+});
+
+/* 要解决这个问题，可以使用另一种 setState 的形式，它接受一个函数而不是一个对象。
+这个函数将接收前一个状态作为第一个参数，应用更新时的 prop 作为第二个参数 */
+
+this.setState((prevState, props) => ({
+    couter: prevSatete.counter + props.increment //OK
+}))
+```
+
+### 生命周期 lifecycle
+
+嗯哼，一图胜千言。
+
+![生命周期](component-lifecycle.jpg)
+
+## React 的数据流和组件间的通信
+
+React 是单向数据流，数据主要从父节点传递到子节点 （*props*）
+
+如果父级的某个 *props* 改变了，React 会重新渲染所有的子节点。
+
+**props 和 state**
+
+尽可能使用 `props` 当做数据源， `state` 用来存放状态值
+
+即通常用 `props` 传递大量数据， `state` 用于存放组件内部一些简单的定义数据。
+
+### 那么组件间是怎么通信的呢？
+
+组件间通信方式也就那么几种
+
+* props
+* props 回调
+* context 对象
+* 事件订阅
+
+#### 1. 父子组件通信
+
+* **父组件更新状态 —— props ——> 子组件更新**
+* **子组件更新  —— props 回调 ——> 调用回调函数更新**
+
+#### 2. 兄弟组件通信
+
+* **兄弟组件更新  —— props 回调 ——> 调用回调函数更新**
+* **context方式更新**
+* **事件订阅**
+
+## 处理事件
+
+React 处理事件与在 DOM 元素上处理事件的区别
+
+* React 事件使用驼峰命名，而不是全小写。
+* 通过 JSX 传递一个函数作为事件处理程序，而不是字符串。
+* 阻止默认行为必须明确调用 *preventDeafult* 而不是 *return false*。
+
+
+```JavaScript
+class Toggle extends React.Component {
+    constructor(props) {
+    super(props);
+        this.state = {isToggleOn: true};
+
+        // 这个绑定是必要的，使`this`在回调中起作用
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
+    }
+
+    render() {
+        return (
+            <button onClick={this.handleClick}>
+                {this.state.isToggleOn ? 'ON' : 'OFF'}
+            </button>
+        );
+    }
+}
+
+ReactDOM.render(
+    <Toggle />,
+    document.getElementById('root')
+);
+```
+
+**在 JSX 回调中必须注意 *this* 的指向问题(line 7)**
+
+## 条件渲染
+
+[讲真没什么可写的，丢个链接吧。](https://reactjs.org/docs/conditional-rendering.html)
+
+## Lists & Key
+
+JavaScript 中转换列表
+
+```JavaScript
+const number = [1, 2, 3, 4, 5];
+const double = number.map((number) => number * 2);
+```
+在 React 中 转换数组为元素列表的方式和上述方法基本相同
+
+### 多组件渲染
+
+```JavaScript
+const number = [1, 2, 3, 4, 5];
+const listItems = number.map((number) => <li>{number}</li>);
+
+ReactDOM.render(
+    <ul>{listItems}</ul>,
+    document.getElementById('root')
+)
+```
+
+### 基本列表组件
+
+通常情况下，我们会在一个组件中渲染列表，重构前面的例子到一个组件，它接受一个 numbers 数组，并输出一个元素的无序列表。
+
+```JavaScript
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li key={number.toString()}>
+      {number}
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+const number = [1, 2, 3, 4, 5];
+ReactDOM.render(
+    <NumberList numbers={numbers} />,
+    document.getElementById('root')
+)
+```
+
+**注意第4行加上了 *key* 如果不加的话会有一个 Wraning: a key should be provided for list items**
+
+### Keys
+
+键(Keys) 帮助 React 标识哪个项被修改、添加或者移除了。数组中的每一个元素都应该有一个唯一不变的键(Keys)来标志
+
+挑选 key 最好的方式是使用一个在它的同辈元素中不重复的标识字符串。多数情况你可以使用数据中的 id 作为 keys
+
+当要渲染的列表项中没有稳定的 id 时，你可以使用数据项的索引值作为 key 的最后选择
+
+而 keys 只在数组的上下文中存在意义
+
+```JavaScript
+function ListItem(props) {
+    const value = props.value;
+    return (
+        // 错误！不需要在这里指定 key：
+        <li key={value.toString()}>
+        {value}
+        </li>
+    );
+}
+
+function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+    // 错误！key 应该在这里指定：
+        <ListItem value={number} />
+    );
+    return (
+        <ul>
+        {listItems}
+        </ul>
+    );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+    <NumberList numbers={numbers} />,
+    document.getElementById('root')
+);
+```
+
+**键是React的一个内部映射，但其不会作为 *props* 传递给组件的内部。如果你需要在组件中使用相同的值，可以明确使用一个不同名字的 prop 传入。如：**
+
+```JavaScript
+const content = posts.map((post) =>
+    <Post
+        key={post.id}
+        id={post.id}
+        title={post.title} />
+);
+```
+
+## 新开一栏 Q&A
 
 在写文章的时候还是会有一些地方不理解。比如
 
