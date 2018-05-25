@@ -204,6 +204,18 @@ sidebar:
             link: "/"
             icon: person
             divider: false
+        Friends:
+            link: "/links/"
+            icon: thumb_up_alt
+            divider: false
+        Tags Cloud:
+            link: "/tags/"
+            icon: cloud_queue
+            divider: false
+        Time Line:
+            link: "/timeline/"
+            icon: event
+            divider: false
     article_num:
         use: false
         divider: false
@@ -302,6 +314,6 @@ vendors:
     # MathJax 2.7.0-2.7.1
     mathjax:
     # Prettify r298 (only prettify.js)
-    prettify: js/prettify.js
+    prettify: js/prettify.min.js
     # Material Icons 3.0.1
     material_icons:
