@@ -1,7 +1,7 @@
 ---
 title: Generator & async (2)
 date: 2018-04-25 21:00:59
-tags: Generator async
+tags: [Generator, async, JavaScript]
 categories: ES6 Generator async
 ---
 # Generator

@@ -1,7 +1,7 @@
 ---
 title: 想开个 ES6 的坑
 date: 2018-04-20 21:32:00
-tags: JavaScript Promise
+tags: [JavaScript, Promise]
 categories: JavaScript ES6
 ---
 
