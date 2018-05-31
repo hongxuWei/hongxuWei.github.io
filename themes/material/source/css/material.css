@@ -1569,23 +1569,12 @@ input.mdl-button[type="submit"] {
   margin: 0
 }
 
-.material-layout {
-  width: 100%;
-  height: 100%;
-}
-
 .material-layout.is-small-screen .mdl-layout--large-screen-only {
   display: none
 }
 
 .material-layout:not(.is-small-screen) .mdl-layout--small-screen-only {
   display: none
-}
-
-.mdl-layout__container {
-  position: absolute;
-  width: 100%;
-  height: 100%
 }
 
 .mdl-layout-title {

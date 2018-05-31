@@ -440,6 +440,9 @@ a {
 #post-content .code .comment{
     color: #75715e;
 }
+#post-content  p.center{
+    text-align: center;
+}
 .post-toc-wrap::-webkit-scrollbar{
     width: 7px;
     height: 7px;
@@ -529,8 +532,6 @@ a {
 #scheme-Paradox .material-layout .material-layout__content {
     position: relative;
     padding-top: 165px;
-    margin: 0 auto;
-    width: 100%;
 }
 @media screen and (max-width: 480px) {
     #scheme-Paradox .material-layout .material-layout__content {
