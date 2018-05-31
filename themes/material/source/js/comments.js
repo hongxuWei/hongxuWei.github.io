@@ -3736,12 +3736,13 @@ function renderComments(_ref2, instance) {
       var initButton = document.createElement('button');
       initButton.className = 'gitment-comments-init-btn';
       initButton.setAttribute('disabled', true);
-      // auto init
-      instance.init().catch(function (e) {
-        initButton.removeAttribute('disabled');
-        alert(e);
-      });
-
+      initButton.onclick = function () {
+        initButton.setAttribute('disabled', true);
+        instance.init().catch(function (e) {
+          initButton.removeAttribute('disabled');
+          alert(e);
+        });
+      };
       initButton.innerText = 'Initialize Comments';
       initHint.appendChild(initButton);
       errorBlock.appendChild(initHint);
