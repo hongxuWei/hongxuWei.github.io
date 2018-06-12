@@ -47,7 +47,7 @@ mkdir data\log
 ```
 **3. 创建配置文件**
 
-创建配置文件，改文件必须设置 `systemLog.path`
+创建配置文件，该文件必须设置 `systemLog.path`
 
 配置文件在 `D:\mongodb\mongod.cfg`
 

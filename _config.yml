@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: Add gitcomment
+  message: 算法：字符全排列问题
 
 # Search
 search:
