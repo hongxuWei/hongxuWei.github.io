@@ -55,9 +55,9 @@ mkdir data\log
 ```cfg
 systemLog:
     destination: file
-    path: c:\data\log\mongod.log
+    path: d:\data\log\mongod.log
 storage:
-    dbPath: c:\data\db
+    dbPath: d:\data\db
 ```
 
 **4. 安装 MongoDB 服务**
