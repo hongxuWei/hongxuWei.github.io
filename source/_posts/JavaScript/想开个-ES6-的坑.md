@@ -69,7 +69,7 @@ Promise.all 方法接受一个数组作为参数，数组内都是 Promise 实�
 `p = p1 && p2 && p3` 即 p1, p2, p3的状态都是 fulfilled 时 p 的状态才是 fulfilled。只要其中一个状态是 rejected, 那么 p 的状态就为 rejected。
 
 ## 6. Promise.race()
-Promise.race 方法同 Promise.all 类似。只不过公式换为 `p = p1 || p2 || p3`
+Promise.race 方法同 Promise.all 类似。只不过正如方法名一样，竞争态的 Promise，一旦其中有任何一个 Promise 的状态确定了，无论是 fulfilled 还是 rejected Promise.race 的状态也就和其一样。
 
 ## 7. Promise.resolve()
 将现有对象转为 Promise 对象
