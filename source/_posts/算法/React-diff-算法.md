@@ -8,7 +8,7 @@ thumbnail: /img/React.png
 
 # React diff 算法浅析
 
-之前在[学习 *React* ](https://hongxuwei.github.io/2018/05/22/React-1/)的时候了解到 React 的 diff 算法可以帮助我们实现最小化的 DOM 操作。
+之前在[学习 *React* ](https://hongxuwei.github.io/2018/05/22/%E5%89%8D%E7%AB%AF/React-1/)的时候了解到 React 的 diff 算法可以帮助我们实现最小化的 DOM 操作。
 
 今天我们来看看 React 的 diff 算法的处理方式。
 
