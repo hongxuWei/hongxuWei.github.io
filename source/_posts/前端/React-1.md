@@ -435,8 +435,8 @@ const content = posts.map((post) =>
 
 在写文章的时候还是会有一些地方不理解。比如
 
-<p id="qa1">[1. 为什么大家都说操作 DOM 很慢？你说慢就慢呀？慢在哪里？](../../29/Why-is-the-DOM-slow)</p>
+<p id="qa1">[1. 为什么大家都说操作 DOM 很慢？你说慢就慢呀？慢在哪里？](https://hongxuwei.github.io/2018/05/29/%E5%89%8D%E7%AB%AF/Why-is-the-DOM-slow/)</p>
 
-<p id="qa2">2. Em... `React` 的啥 diff 算法？简单点怎么实现？如何通过 diff 算法去优化我们的组件？</p>
+<p id="qa2">[2. Em... `React` 的啥 diff 算法？简单点怎么实现？如何通过 diff 算法去优化我们的组件？](https://hongxuwei.github.io/2018/06/21/%E7%AE%97%E6%B3%95/React-diff-%E7%AE%97%E6%B3%95/)</p>
 
 后续会开新坑把这些问题一一弄清楚。然后和这里链接起来。
