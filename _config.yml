@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: 修正 Promise.race 错误
+  message: 哇哦，BFC
 
 # Search
 search:
