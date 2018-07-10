@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: 哇哦，BFC
+  message: 闭包与作用域
 
 # Search
 search:

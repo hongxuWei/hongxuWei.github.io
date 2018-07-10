@@ -1,5 +1,5 @@
 ---
-title: 'Wow, BFC'
+title: 'Wow BFC'
 date: 2018-07-01 15:24:55
 tags: CSS
 categories: [CSS, BFC]
