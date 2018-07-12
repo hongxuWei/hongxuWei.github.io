@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: 闭包与作用域
+  message: JS基础 String
 
 # Search
 search:
