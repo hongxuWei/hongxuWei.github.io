@@ -558,3 +558,10 @@ if (!String.prototype.padEnd) {
     };
 }
 ```
+
+一图胜千言
+![String 思维导图](String.png)
+
+下面是 xmind 文件
+
+[String.xmind](String.xmind)
