@@ -42,6 +42,21 @@
                     <%- partial('_partial/import_js') %>
                 </main>
             </div>
+             <% if (theme.PWA) { %>
+                <!-- PWA JS File -->
+                <script>
+                    if(navigator.serviceWorker != null) {
+                        window.addEventListener('DOMContentLoaded', function() {
+                            // 执行注册
+                            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+
+                            }).catch(function(err) {
+                                // Eat it!
+                            });
+                        });
+                    }
+                </script>
+            <% } %>
         </body>
     <% } %>
 </html>

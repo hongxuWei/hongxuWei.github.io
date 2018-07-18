@@ -4,9 +4,9 @@
 
 # Head info
 head:
-    favicon: "/img/favicon.png"
-    high_res_favicon: "/img/favicon.png"
-    apple_touch_icon: "/img/favicon.png"
+    favicon: "/img/icon .png"
+    high_res_favicon: "/img/icon.png"
+    apple_touch_icon: "/img/icon.png"
     keywords:
     site_verification:
         google:
@@ -289,6 +289,8 @@ busuanzi:
     post_pv: false
     busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
+# Support Progressive Web Application(PWA)
+PWA: true
 # Files Vendors
 # Set a CDN for the files src you want to customize. The url should with protocol.
 # Default(empty) will load the files from the origin server.

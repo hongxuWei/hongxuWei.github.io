@@ -52,6 +52,11 @@
         <%= config.title %>
     </title>
 
+    <% if (theme.PWA) { %>
+        <!-- PWA manifest -->
+        <link rel="manifest" href="/manifest.json">
+    <% } %>
+
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="<%= url_for(theme.head.favicon) %>">
     <link rel="icon" href="<%= url_for(theme.head.high_res_favicon) %>">
