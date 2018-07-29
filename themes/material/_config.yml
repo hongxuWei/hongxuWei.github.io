@@ -200,21 +200,21 @@ sidebar:
         icon: chrome_reader_mode
         divider: false
     pages:
-        About:
-            link: "/"
-            icon: person
+        例子:
+            link: "/demo/"
+            icon: code
             divider: false
-        Friends:
-            link: "/links/"
-            icon: thumb_up_alt
-            divider: false
-        Tags Cloud:
+        标签云:
             link: "/tags/"
             icon: cloud_queue
             divider: false
-        Time Line:
+        时间轴:
             link: "/timeline/"
             icon: event
+            divider: false
+        友链:
+            link: "/links/"
+            icon: thumb_up_alt
             divider: false
     article_num:
         use: false

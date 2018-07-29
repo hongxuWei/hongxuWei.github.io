@@ -26,7 +26,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: demo/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: 支持 PWA
+  message: 添加 React Demo
 
 # Search
 search:
