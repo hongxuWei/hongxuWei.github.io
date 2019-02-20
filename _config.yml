@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: Lodash compact
+  message: Lodash concat
 
 # Search
 search:
