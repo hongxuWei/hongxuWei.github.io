@@ -166,7 +166,7 @@ paint 是一个耗时的过程，但是 layout 是一个更耗时的过程。
 
 * offsetTop, offsetLeft, offsetWidth, offsetHeight
 * scrollTop, scrollLeft, scrollWidth, scrollHeight
-* clientTop, clientLeft, clientWidth, clientHieght
+* clientTop, clientLeft, clientWidth, clientHeight
 * getComputedStyle() ( currentStyle() in IE)
 
 等等这些布局信息由这些属性和方法返回最新的数据，所以浏览器不得不运行渲染队列中待改变的项目并重新排版以返回正确的值。
