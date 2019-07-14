@@ -7,6 +7,7 @@
 
 <script>
     var gitalk = new Gitalk({
+            id: "<%- page.title + date(page.date, 'YYYYMMDD')%>",
             clientID: '<%= theme.comment.gitalk_client_id %>',
             clientSecret: '<%= theme.comment.gitalk_client_secret %>',
             repo: '<%= theme.comment.gitalk_repo %>',
