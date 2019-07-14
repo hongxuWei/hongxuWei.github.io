@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: 前端性能优化小总结
+  message: 链表
 
 # Search
 search:
