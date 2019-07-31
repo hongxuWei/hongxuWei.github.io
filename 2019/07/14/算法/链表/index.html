@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            链表 | 
+        
+        Hongxu&#39;s Blog
+    </title>
+
+    
+        <!-- PWA manifest -->
+        <link rel="manifest" href="/manifest.json">
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/icon .png">
+    <link rel="icon" href="/img/icon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="魏红旭的Blog">
+    <meta name="keywords" content=",算法,LeetCode">
+    <meta name="theme-color" content="#00BCD4">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?PLcb3nZqoD+sQzt9XcAAVg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?1HNAkKNMjDG4DBqzfiUMXg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #00BCD4 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #00BCD4 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #00BCD4 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hongxu&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://hongxuWei.github.io/2019/07/14/算法/链表/">
+    <meta name="msapplication-navbutton-color" content="#00BCD4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hongxu&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/icon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://hongxuWei.github.io/2019/07/14/算法/链表/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="链表 | Hongxu&#39;s Blog">
+    <meta property="og:image" content="/img/icon.png">
+    <meta property="og:description" content="魏红旭的Blog">
+    <meta property="og:article:tag" content="算法"> <meta property="og:article:tag" content="LeetCode"> 
+
+    
+        <meta property="article:published_time" content="Sun Jul 14 2019 09:48:34 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jul 31 2019 19:26:40 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://hongxuWei.github.io/2019/07/14/算法/链表/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://hongxuWei.github.io/2019/07/14/算法/链表/index.html",
+    "headline": "链表",
+    "datePublished": "Sun Jul 14 2019 09:48:34 GMT+0800",
+    "dateModified": "Wed Jul 31 2019 19:26:40 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Hongxu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpeg"
+        },
+        "description": "欢迎来到 Hongxu 的 Blog"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hongxu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/icon.png"
+        }
+    },
+    "keywords": ",算法,LeetCode",
+    "description": "魏红旭的Blog",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">定义</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LeetCode-练习题"><span class="post-toc-number">2.</span> <span class="post-toc-text">LeetCode 练习题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#两数相加-LeetCode-2"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">两数相加 LeetCode#2</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-先求解再转为链表"><span class="post-toc-number">2.1.0.1.</span> <span class="post-toc-text">1. 先求解再转为链表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-遍历两链表，用变量表示是否进位"><span class="post-toc-number">2.1.0.2.</span> <span class="post-toc-text">2. 遍历两链表，用变量表示是否进位</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除链表的倒数第N个节点-LeetCode-19"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">删除链表的倒数第N个节点 LeetCode#19</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-数组存放链表信息"><span class="post-toc-number">2.2.0.1.</span> <span class="post-toc-text">1. 数组存放链表信息</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-双指针法"><span class="post-toc-number">2.2.0.2.</span> <span class="post-toc-text">2. 双指针法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#合并两个有序链表-LeetCode-21"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">合并两个有序链表 LeetCode#21</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-遍历两链表"><span class="post-toc-number">2.3.0.1.</span> <span class="post-toc-text">1. 遍历两链表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-递归法-LeetCode-解法1"><span class="post-toc-number">2.3.0.2.</span> <span class="post-toc-text">2. 递归法 - LeetCode 解法1</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#合并K个排序链表-LeetCode-23"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">合并K个排序链表 LeetCode#23</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-遍历-K-个链表"><span class="post-toc-number">2.4.0.1.</span> <span class="post-toc-text">1. 遍历 K 个链表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-分治思想"><span class="post-toc-number">2.4.0.2.</span> <span class="post-toc-text">2. 分治思想</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#两两交换链表中的节点-LeetCode-24"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">两两交换链表中的节点 LeetCode#24</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-遍历"><span class="post-toc-number">2.5.0.1.</span> <span class="post-toc-text">1. 遍历</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-递归法"><span class="post-toc-number">2.5.0.2.</span> <span class="post-toc-text">2. 递归法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#K-个一组翻转链表-LeetCode-25"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">K 个一组翻转链表 LeetCode#25</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-遍历-1"><span class="post-toc-number">2.6.0.1.</span> <span class="post-toc-text">1. 遍历</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#旋转链表-LeetCode-61"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">旋转链表 LeetCode#61</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-暴力解法"><span class="post-toc-number">2.7.0.1.</span> <span class="post-toc-text">1. 暴力解法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-形成环链表法"><span class="post-toc-number">2.7.0.2.</span> <span class="post-toc-text">2. 形成环链表法</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除排序链表中的重复元素-II-LeetCode-82"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">删除排序链表中的重复元素 II LeetCode#82</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除排序链表中的重复元素-LeetCode-83"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">删除排序链表中的重复元素 LeetCode#83</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分隔链表-LeetCode-86"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">分隔链表 LeetCode#86</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反转链表-II-LeetCode-92"><span class="post-toc-number">2.11.</span> <span class="post-toc-text">反转链表 II LeetCode#92</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-拼接法"><span class="post-toc-number">2.11.0.1.</span> <span class="post-toc-text">1. 拼接法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-gt-LeetCode-官方解答"><span class="post-toc-number">2.11.0.2.</span> <span class="post-toc-text">2. -&gt; LeetCode 官方解答</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环形链表-LeetCode-141"><span class="post-toc-number">2.12.</span> <span class="post-toc-text">环形链表 LeetCode#141</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-缓存法"><span class="post-toc-number">2.12.0.1.</span> <span class="post-toc-text">1. 缓存法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-双指针法-1"><span class="post-toc-number">2.12.0.2.</span> <span class="post-toc-text">2. 双指针法</span></a></li></ol></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/LeetCode2.jfif)">
+    
+            <p class="article-headline-p">
+                链表
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpeg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Hongxu</strong>
+        <span>7月 14, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/LeetCode/">LeetCode</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/算法/">算法</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=链表&url=https://hongxuWei.github.io/2019/07/14/算法/链表/index.html&pic=https://hongxuWei.github.io/img/icon .png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://hongxuWei.github.io/2019/07/14/算法/链表/index.html&title=链表" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hongxu&#39;s Blog&title=链表&summary=魏红旭的Blog&pics=https://hongxuWei.github.io/img/icon .png&url=https://hongxuWei.github.io/2019/07/14/算法/链表/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
+<p>链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域。 相比于线性表顺序结构，操作复杂。由于不必须按顺序存储，链表在插入的时候可以达到O(1)的复杂度，比另一种线性表顺序表快得多，但是查找一个节点或者访问特定编号的节点则需要O(n)的时间，而线性表和顺序表相应的时间复杂度分别是O(logn)和O(1)。<br>使用链表结构可以克服数组链表需要预先知道数据大小的缺点，链表结构可以充分利用计算机内存空间，实现灵活的内存动态管理。但是链表失去了数组随机读取的优点，同时链表由于增加了结点的指针域，空间开销比较大。链表最明显的好处就是，常规数组排列关联项目的方式可能不同于这些数据项目在记忆体或磁盘上顺序，数据的存取往往要在不同的排列顺序中转换。链表允许插入和移除表上任意位置上的节点，但是不允许随机存取。链表有很多种不同的类型：单向链表，双向链表以及循环链表。</p>
+</blockquote>
+<p class="center"><img src="/2019/07/14/算法/链表/define.png" alt="定义"></p><br><p class="center">定义</p>
+
+<h1 id="LeetCode-练习题"><a href="#LeetCode-练习题" class="headerlink" title="LeetCode 练习题"></a>LeetCode 练习题</h1><h2 id="两数相加-LeetCode-2"><a href="#两数相加-LeetCode-2" class="headerlink" title="两数相加 LeetCode#2"></a>两数相加 LeetCode#2</h2><blockquote>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。<br>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。<br>示例：</p>
+<pre><code>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
+输出：7 -&gt; 0 -&gt; 8
+原因：342 + 465 = 807
+</code></pre></blockquote>
+<h4 id="1-先求解再转为链表"><a href="#1-先求解再转为链表" class="headerlink" title="1. 先求解再转为链表"></a><del>1. 先求解再转为链表</del></h4><ul>
+<li>遍历两链表求出两数</li>
+<li>两数相加求和</li>
+<li>数字再转为链表</li>
+</ul>
+<p>这是相对来说比较直观的一种解法，关键就在链表转数字以及数字转链表</p>
+<p>空间复杂度和时间复杂度都不是很理想</p>
+<pre><code class="javascript">const ListNode = (val) =&gt; {
+  this.val = val
+  this.next = null
+}
+
+const number2List = (num) =&gt; {
+  const numArr = String(num).split(&#39;&#39;).map(item =&gt; Number(item))
+  const head = new ListNode()
+  let curNode = head
+  const len = numArr.length
+  for (let i = len; i &gt; 0; i--) {
+    curNode.val = numArr[i - 1]
+    curNode.next = i === 1 ? null : new ListNode()
+    curNode = curNode.next
+  }
+  return head
+}
+
+const list2Number = (list) =&gt; {
+  let weight = 0
+  let num = 0
+  while(list !== null) {
+    const curNum = list.val * Math.pow(10, weight)
+    num += curNum
+    weight += 1
+    list = list.next 
+  }
+  return num
+}
+
+const addTwoNumbers = (l1, l2) =&gt; {
+  if (l1 === null) {
+    return l2
+  }
+
+  if (l2 === null) {
+    return l1
+  }
+  const number1 = list2Number(l1)
+  const number2 = list2Number(l2)
+  const sum = number1 + number2
+  return number2List(sum)
+}
+</code></pre>
+<p>但是出错啦 TAT</p>
+<p class="center"><img src="/2019/07/14/算法/链表/LeetCode2Error.png" alt="LeetCode2Error"></p>
+
+<p>这就是没有考虑到超大数字。<br>不仅如此，如果最后的结果是 <code>Infinity</code> 这个方法就不起作用了。</p>
+<h4 id="2-遍历两链表，用变量表示是否进位"><a href="#2-遍历两链表，用变量表示是否进位" class="headerlink" title="2. 遍历两链表，用变量表示是否进位"></a>2. 遍历两链表，用变量表示是否进位</h4><ul>
+<li>两链表对应位置值相加</li>
+<li>标志位有进位设为 1 无进位就设为 0（仅限两链表相加）</li>
+</ul>
+<p>时间复杂度是 O(n) 空间复杂度是 O(n)</p>
+<p><strong>这里需要注意几种情况</strong></p>
+<ol>
+<li>链表位数不相同</li>
+<li>最终结果值大于两链表最大位数</li>
+</ol>
+<pre><code class="javascript">const addTwoNumbers = (l1, l2) =&gt; {
+  if (l1 === null) {
+      return l2
+  }
+  if (l2 === null) {
+      return l1
+  }
+  const head = new ListNode(0)
+  let list1 = l1
+  let list2 = l2
+  let curNode = head
+  let carry = 0
+
+  while (list1 !== null || list2 !== null) {
+    const num1 = list1 === null ? 0 : list1.val
+    const num2 = list2 === null ? 0 : list2.val
+    // 这里注意不要忘记加进位的数
+    const sum = num1 + num2 + carry
+    // 处理进位
+    carry = sum &gt;= 10 ? 1 : 0
+    curNode.next = new ListNode(sum % 10)
+    curNode = curNode.next
+    // list 长度不一致的时候的特殊处理
+    if (list1 !== null) {
+      list1 = list1.next
+    }
+
+    if (list2 !== null) {
+      list2 = list2.next
+    }
+  }
+  // 遍历完后还有数字的特殊处理
+  if (carry !== 0) {
+    curNode.next = new ListNode(carry)
+  }
+  // 这里注意要返回 head 的 next 应为刚开始我们构造了一个无效的 Node 来辅助我们解题
+  return head.next
+}
+</code></pre>
+<h2 id="删除链表的倒数第N个节点-LeetCode-19"><a href="#删除链表的倒数第N个节点-LeetCode-19" class="headerlink" title="删除链表的倒数第N个节点 LeetCode#19"></a>删除链表的倒数第N个节点 LeetCode#19</h2><blockquote>
+<p>给定一个链表，删除链表的倒数第 n 个节点，并且返回链表的头结点。<br>示例：</p>
+<pre><code>给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 n = 2.
+当删除了倒数第二个节点后，链表变为 1-&gt;2-&gt;3-&gt;5.
+</code></pre><p>说明：<br>给定的 n 保证是有效的。<br>进阶：<br>你能尝试使用一趟扫描实现吗？</p>
+</blockquote>
+<p>总之就是有一个 ListNode<br><strong>需要将 LN(n - 1) 的 next 指针 指向 LN(n + 1)</strong> 即<br><strong>LN(n - 1).next = LN(n + 1)</strong> 即<br><strong>LN(n - 1).next = LN(n - 1).next.next</strong></p>
+<h4 id="1-数组存放链表信息"><a href="#1-数组存放链表信息" class="headerlink" title="1. 数组存放链表信息"></a>1. 数组存放链表信息</h4><p>我首先想到的是这么解</p>
+<ul>
+<li>遍历一遍链表并挨个放到数组里面</li>
+<li>对应修改 n - 1 的 next 节点到 n + 1</li>
+</ul>
+<p><strong>这里要注意</strong></p>
+<ol>
+<li>n - 1 和 n + 1 是否存在</li>
+</ol>
+<p>这么解时间复杂度是 O(n) 但是由于引入一个数组所以是 O(n) 的空间复杂度</p>
+<pre><code class="javascript">const removeNthFromEnd = (head, n) =&gt; {
+  if (head === null) {
+    return head
+  }
+  // 遍历一遍并存放链表数据
+  const memory = []
+  while (head !== null) {
+    memory.push(head)
+    head = head.next
+  }
+  // 当只有一个节点的特殊处理
+  const len = memory.length
+  if (len === 1) {
+    return memory[0].next
+  }
+
+  const index = len - n
+  // 当 n = 0 的特殊情况，此时不删除任何节点（因为题目说保证 n 有效，所以先注释掉）
+  // if (index === len) {
+  //   return memory[0]
+  // }
+  // 当 n = 链表总长度的特殊情况，此时无 n - 1
+  if (index === 0) {
+    return memory[1]
+  }
+
+  // 注意这里的 memory[index + 1] || null 是为了处理 n + 1 不存在的情况
+  memory[index - 1].next = memory[index + 1] || null
+  return memory[0]
+}
+</code></pre>
+<p>但是有没有更好的解法</p>
+<h4 id="2-双指针法"><a href="#2-双指针法" class="headerlink" title="2. 双指针法"></a>2. 双指针法</h4><p>这是 LeetCode 中文官方的一个解<br>思路就是有两个指针，第一个在前是 forwardP 另一个滞后与他 n + 1 个 Node<br>这样当第一个指针跑到最后时，第二个指针刚好就在倒数第 n - 1 个位置</p>
+<p>这样就优化了之前存放临时数据的数组的空间</p>
+<p>时间复杂度是 O(n) 空间复杂度是 O(1)</p>
+<ul>
+<li>两个指针初始位置都在头节点</li>
+<li>指针 1 先向前走 n 个节点</li>
+<li>两指针同时前进，当指针 1 跑到链表尾时更改指针 2 指向</li>
+</ul>
+<p class="center"><img src="/2019/07/14/算法/链表/LeetCode12Solution2.png" alt="LeetCode12Solution2"></p>
+
+<pre><code class="javascript">const removeNthFromEnd = (head, n) =&gt; {
+  // 引入一个 head node 可以避免下面的很多判断
+  const _head = new ListNode()
+  _head.next = head
+
+  let forwardPointer = _head;
+  let pointer = _head;
+
+  // 指针 1 前进 n + 1步
+  for (let step = 1; step &lt;= n + 1; step++) {
+    forwardPointer = forwardPointer.next
+  }
+  // 双指针同时前进
+  while (forwardPointer !== null) {
+    forwardPointer = forwardPointer.next
+    pointer = pointer.next
+  }
+  // 删除第 n 个位置的值
+  pointer.next = pointer.next.next
+  return _head.next
+}
+</code></pre>
+<h2 id="合并两个有序链表-LeetCode-21"><a href="#合并两个有序链表-LeetCode-21" class="headerlink" title="合并两个有序链表 LeetCode#21"></a>合并两个有序链表 LeetCode#21</h2><blockquote>
+<p>将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。<br>示例：</p>
+<pre><code>输入：1-&gt;2-&gt;4, 1-&gt;3-&gt;4
+输出：1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4
+</code></pre></blockquote>
+<h4 id="1-遍历两链表"><a href="#1-遍历两链表" class="headerlink" title="1. 遍历两链表"></a>1. 遍历两链表</h4><p>首先想到的是如下思路<br>思路：增加一个主链表，依次比较两链表的将小的节点加入主链表，最后将主链表返回</p>
+<p>时间复杂度是 O(m + n) 空间复杂度是 O(1)</p>
+<ul>
+<li>比较两链表的当前节点</li>
+<li>将值小的节点加入主链表</li>
+<li>当有一个节点遍历到最后时将另一个链表的当前节点加入主链表</li>
+</ul>
+<pre><code class="javascript">const mergeTwoLists = (l1, l2) =&gt; {
+  // l1 l2 为空的特殊处理
+  if (l1 === null) {
+      return l2
+  }
+  if (l2 === null) {
+      return l1
+  }
+
+  const _head = new ListNode();
+  let pointer = _head
+  // 注意这里的遍历条件当有一个已经遍历完了之后就停止
+  while (l1 !== null &amp;&amp; l2 !== null) {
+    const l1IsMin = l1.val &lt; l2.val
+    pointer.next = l1IsMin ? l1 : l2
+    if (l1IsMin) {
+      l1 = l1.next
+    } else {
+      l2 = l2.next
+    }
+    pointer = pointer.next
+  }
+
+  pointer.next = l1 === null ? l2 : l1
+  return _head.next
+}
+</code></pre>
+<h4 id="2-递归法-LeetCode-解法1"><a href="#2-递归法-LeetCode-解法1" class="headerlink" title="2. 递归法 - LeetCode 解法1"></a>2. 递归法 - LeetCode 解法1</h4><p>递归法只需要关注边界条件已经处理单节点逻辑，这样的话代码结构会比较清晰</p>
+<p><strong>注意终止条件是 node === null</strong></p>
+<p>时间复杂度是 O(m + n) 空间复杂度是 O(m + n)</p>
+<pre><code class="javascript">const mergeTwoLists = (l1, l2) =&gt; {
+  // l1 l2 为空的特殊处理
+  if (l1 === null) {
+      return l2
+  }
+  if (l2 === null) {
+      return l1
+  }
+  // 选择值小的节点返回并处理 next 指向为递归结果
+  if (l1.val &lt; l2.val) {
+    l1.next = mergeTwoLists(l1.next, l2)
+    return l1
+  }
+
+  l2.next = mergeTwoLists(l1, l2.next)
+  return l2
+}
+</code></pre>
+<h2 id="合并K个排序链表-LeetCode-23"><a href="#合并K个排序链表-LeetCode-23" class="headerlink" title="合并K个排序链表 LeetCode#23"></a>合并K个排序链表 LeetCode#23</h2><p>这题是 <a href="#合并两个有序链表-LeetCode-21">合并两个有序链表</a>的变种，我首先想到的方法与 #21-1 是同样的解法，只不过由比较两个数的大小改为比较 K 个数的大小。</p>
+<h4 id="1-遍历-K-个链表"><a href="#1-遍历-K-个链表" class="headerlink" title="1. 遍历 K 个链表"></a>1. 遍历 K 个链表</h4><p>这种解法的时间复杂度是 O(k * n)，空间复杂度是 O(n)</p>
+<pre><code class="javascript">const findMinIndex = (lists) =&gt; {
+  const len = lists.length
+  let min = null
+  let minIndex = -1
+  for (let i = 0; i &lt; len; i++) {
+    if (lists[i] === null) {
+      continue
+    }
+    if (min === null) {
+      min = lists[i].val
+      minIndex = i
+      continue
+    }
+    const curVal = lists[i].val
+    if (curVal &lt; min) {
+      minIndex = i
+      min = curVal
+    }
+  }
+  return minIndex
+}
+
+var mergeKLists = function(lists) {
+  let listLen = lists.length
+  // 处理特殊情况
+  if (listLen === 0) {
+    return null
+  }
+  const head = new ListNode()
+  let pointer = head
+
+  while (listLen &gt; 0) {
+    minIndex = findMinIndex(lists)
+    if (minIndex &lt; 0) {
+      return head.next
+    }
+    pointer.next = lists[minIndex]
+    pointer = pointer.next
+    lists[minIndex] = lists[minIndex].next
+  }
+  return head.next
+}
+</code></pre>
+<h4 id="2-分治思想"><a href="#2-分治思想" class="headerlink" title="2. 分治思想"></a>2. 分治思想</h4><p>这是 LeetCode 官方解答之一</p>
+<p class="center"><img src="/2019/07/14/算法/链表/LeetCode23Solution2.png" alt="LeetCode23Solution2"></p>
+
+<pre><code class="javascript">const mergeKLists = (lists) =&gt; {
+  const len =  lists.length
+    let interval = 1
+    while (interval &lt; len) {
+      for(let i = 0; i &lt; len - interval; i = i + interval * 2) {
+        lists[i] = mergeTwoLists(lists[i], lists[i + interval])
+      }
+      interval = interval * 2
+    }
+    return len &gt; 0 ? lists[0] : null
+}
+</code></pre>
+<h2 id="两两交换链表中的节点-LeetCode-24"><a href="#两两交换链表中的节点-LeetCode-24" class="headerlink" title="两两交换链表中的节点 LeetCode#24"></a>两两交换链表中的节点 LeetCode#24</h2><blockquote>
+<p>给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。<br>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。<br>示例:</p>
+<pre><code>给定 1-&gt;2-&gt;3-&gt;4, 你应该返回 2-&gt;1-&gt;4-&gt;3.
+</code></pre></blockquote>
+<h4 id="1-遍历"><a href="#1-遍历" class="headerlink" title="1. 遍历"></a>1. 遍历</h4><p><strong>每次循环的 step 相当于等于 2</strong><br><strong>注意终止条件有两个<code>一个是当前节点为 null</code> 另一个是 <code>next 节点为 null</code></strong></p>
+<p>该方法时间复杂度是 O(n)，由于创建新的链表顾空间复杂度也为 O(n)</p>
+<pre><code class="javascript">const swapPairs = (head) =&gt; {
+  if (head === null) {
+    return head
+  }
+  const _head = new ListNode()
+  // 指向返回链表的当前节点
+  let cursor = _head
+  // 指向原始链表的当前节点
+  let pointer = head
+  while (pointer !== null) {
+    if (pointer.next === null) {
+      cursor.next = new ListNode(pointer.val)
+      cursor = cursor.next
+      break
+    }
+    // 交换链表节点值
+    cursor.next = new ListNode(pointer.next.val)
+    cursor.next.next = new ListNode(pointer.val)
+    // 循环步长为 2
+    cursor = cursor.next.next
+    pointer = pointer.next.next
+  }
+  // 注意处理尾节点的 next 为 null
+  cursor.next = null
+  return _head.next
+}
+</code></pre>
+<h4 id="2-递归法"><a href="#2-递归法" class="headerlink" title="2. 递归法"></a>2. 递归法</h4><pre><code class="javascript">const swapPairs = (head) =&gt; {
+  // 特殊处理
+  if (head === null || head.next === null) {
+    return head
+  }
+  const next = head.next
+  head.next = swapPairs(next.next)
+  next.next = head
+  return next
+}
+</code></pre>
+<h2 id="K-个一组翻转链表-LeetCode-25"><a href="#K-个一组翻转链表-LeetCode-25" class="headerlink" title="K 个一组翻转链表 LeetCode#25"></a>K 个一组翻转链表 LeetCode#25</h2><blockquote>
+<p>给你一个链表，每 k 个节点一组进行翻转，请你返回翻转后的链表。<br>k 是一个正整数，它的值小于或等于链表的长度。<br>如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。<br>示例:</p>
+<pre><code>给定这个链表：1-&gt;2-&gt;3-&gt;4-&gt;5
+当 k = 2 时，应当返回: 2-&gt;1-&gt;4-&gt;3-&gt;5
+当 k = 3 时，应当返回: 3-&gt;2-&gt;1-&gt;4-&gt;5
+</code></pre><p>说明:<br>你的算法只能使用常数的额外空间。<br>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
+</blockquote>
+<p>这题我的想法是两个指针 一个指向每次要翻转的最后一个节点记为 lastNode，另一个指针从当前要反转的起始位置开始一直走到最后一个节点 记为 curNode，每次走的时候 lastNode -&gt; curNode，来实现翻转的目的。<br>但是提交的时候各种边界条件没有考虑清楚，提交了很多次都没 ac。</p>
+<h4 id="1-遍历-1"><a href="#1-遍历-1" class="headerlink" title="1. 遍历"></a>1. 遍历</h4><p>好吧这题太难了，下次再做 😝<br>国际惯例记一个 <em>TODO</em></p>
+<h2 id="旋转链表-LeetCode-61"><a href="#旋转链表-LeetCode-61" class="headerlink" title="旋转链表 LeetCode#61"></a>旋转链表 LeetCode#61</h2><blockquote>
+<p>给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。<br>示例 1:</p>
+<pre><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL, k = 2
+输出: 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL
+解释:
+向右旋转 1 步: 5-&gt;1-&gt;2-&gt;3-&gt;4-&gt;NULL
+向右旋转 2 步: 4-&gt;5-&gt;1-&gt;2-&gt;3-&gt;NULL
+</code></pre><p>示例 2:</p>
+<pre><code>输入: 0-&gt;1-&gt;2-&gt;NULL, k = 4
+输出: 2-&gt;0-&gt;1-&gt;NULL
+解释:
+向右旋转 1 步: 2-&gt;0-&gt;1-&gt;NULL
+向右旋转 2 步: 1-&gt;2-&gt;0-&gt;NULL
+向右旋转 3 步: 0-&gt;1-&gt;2-&gt;NULL
+向右旋转 4 步: 2-&gt;0-&gt;1-&gt;NULL
+</code></pre></blockquote>
+<h4 id="1-暴力解法"><a href="#1-暴力解法" class="headerlink" title="1. 暴力解法"></a>1. 暴力解法</h4><p>这是我最先想到的解法，把node 信息放到一个数组里<br>更具 k 依次遍历对应 Node 进行旋转</p>
+<p>时间复杂度 O(n + k) 空间复杂度 O(n)</p>
+<pre><code class="javascript">// 根据右旋值 i 计算应当移动的节点在数组的哪个位置
+const calcIndex = (len, i) =&gt; {
+  if(len &gt; i) {
+    return len - i
+  }
+  const rest = i % len
+  let index = 0
+  if (rest) {
+    index = len - rest
+  }
+  return index
+}
+
+const rotateRight = (head, k) =&gt; {
+  // 特殊情况
+  if (k === 0) {
+    return head
+  }
+  const allLinks = []
+  let pointer = head
+  // 获取链表的所有信息
+  while (pointer !== null) {
+    allLinks.push(pointer)
+    pointer = pointer.next
+  }
+  const linksLen = allLinks.length
+  // 无链表数据及只有 1 个链表数据
+  if (linksLen === 0 || linksLen === 1) {
+    return head
+  }
+  // 无效右旋过滤
+  k = k % linksLen
+  let _head = head
+  // 开始右旋
+  for (let i = 1; i &lt;= k; i++) {
+    const index = calcIndex(linksLen, i)
+    const prevNodexIndex = calcIndex(linksLen, i + 1)
+    const curNode = allLinks[index]
+    const prevNode = allLinks[prevNodexIndex]
+    curNode.next = _head
+    prevNode.next = null
+    _head = curNode
+  }
+  return _head
+}
+</code></pre>
+<h4 id="2-形成环链表法"><a href="#2-形成环链表法" class="headerlink" title="2. 形成环链表法"></a>2. 形成环链表法</h4><p>这种解法也是 LeetCode 官方解法之一。<br>其思路就是将链表构成一个环，再在对应的地方切断。就自然而然的形成了右移</p>
+<p>时间复杂度 O(2n - k) 空间复杂度 O(1)</p>
+<pre><code class="javascript">const rotateRight = (head, k) =&gt; {
+  // 特殊情况处理
+  if(head === null || head.next === null || k === 0) {
+    return head
+  }
+
+  // 留住头结点翻遍成环
+  const _head = head
+  let linkLen = 1;
+  // 先找到尾节点，并得出链表长度用于后续计算 拆开节点位置
+  while (head.next !== null) {
+    head = head.next
+    linkLen += 1
+  }
+
+  // 形成闭环
+  head.next = _head
+  // 计算在何处拆开节点
+  // 这一步决定了结果是否正确非常重要
+  // 这里计算要移动的位置是返回值的表尾，表尾 next 就是返回值的 表头
+  const breakKey = linkLen &lt; k ? linkLen - (k % linkLen) : linkLen - k
+  // 移动到该节点
+  for (let i = 1; i &lt;= breakKey; i++) {
+    head = head.next
+  }
+  // 拆开环链表
+  const rHead = head.next
+  head.next = null
+  return rHead
+}
+</code></pre>
+<h2 id="删除排序链表中的重复元素-II-LeetCode-82"><a href="#删除排序链表中的重复元素-II-LeetCode-82" class="headerlink" title="删除排序链表中的重复元素 II LeetCode#82"></a>删除排序链表中的重复元素 II LeetCode#82</h2><blockquote>
+<p>给定一个排序链表，删除所有含有重复数字的节点，只保留原始链表中 没有重复出现 的数字。<br>示例 1:</p>
+<pre><code>输入: 1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5
+输出: 1-&gt;2-&gt;5
+</code></pre><p>示例 2:</p>
+<pre><code>输入: 1-&gt;1-&gt;1-&gt;2-&gt;3
+输出: 2-&gt;3
+</code></pre></blockquote>
+<p>因为是有序链表，所以依次遍历，比较当前节点与上一个节点和下一个节点是否一致如果有重复就不返回</p>
+<p>时间复杂度 O(n) 空间复杂度 O(1)</p>
+<pre><code class="javascript">const deleteDuplicates = (head) =&gt; {
+  const result = new ListNode()
+  let point = result
+
+  let cur = head
+  let prev = new ListNode(null)
+
+  while (cur !== null) {
+    /* 两种情况可认为该节点有效
+      1. 前继节点值和当前节点值不一样 且 后继几点为 null
+      2. 前继节点值和当前节点值不一样 且 当前节点值和后继节点值不一样 */
+    if (( prev.val !== cur.val &amp;&amp; cur.next === null)
+      || (prev.val !== cur.val &amp;&amp; cur.val !== cur.next.val)
+    ) {
+      // 将当前节点加入
+      point.next = cur
+      point = point.next
+    }
+
+    prev = cur
+    cur = cur.next
+  }
+  // ！！注意这里要 尾节点 next 置为 null
+  point.next = null
+  return result.next
+}
+</code></pre>
+<h2 id="删除排序链表中的重复元素-LeetCode-83"><a href="#删除排序链表中的重复元素-LeetCode-83" class="headerlink" title="删除排序链表中的重复元素 LeetCode#83"></a>删除排序链表中的重复元素 LeetCode#83</h2><blockquote>
+<p>给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。<br>示例 1:</p>
+<pre><code>输入: 1-&gt;1-&gt;2
+输出: 1-&gt;2
+</code></pre><p>示例 2:</p>
+<pre><code>输入: 1-&gt;1-&gt;2-&gt;3-&gt;3
+输出: 1-&gt;2-&gt;3
+</code></pre></blockquote>
+<p>这题和 #82 很像思路也差不多<br>因为是有序的，直接比较当前值和下一个值是否一样<br>如果一样就把当前节点 next 转为其孙子节点 这样就实现了删除重复节点</p>
+<p>时间复杂度 O(n) 空间复杂度 O(1)</p>
+<pre><code class="javascript">const deleteDuplicates = (head) =&gt; {
+  let _head = head
+
+  while(_head) {
+    // 下一个节点和当前节点重复
+    if(_head.next &amp;&amp; _head.val === _head.next.val) {
+      // 删除下一个重复节点
+      _head.next = _head.next.next
+      // 不移动 _head 指针，下一个值继续与当前循环 _head 比较
+      continue
+    }
+    _head = _head.next
+  }
+  return head
+}
+</code></pre>
+<h2 id="分隔链表-LeetCode-86"><a href="#分隔链表-LeetCode-86" class="headerlink" title="分隔链表 LeetCode#86"></a>分隔链表 LeetCode#86</h2><blockquote>
+<p>给定一个链表和一个特定值 x，对链表进行分隔，使得所有小于 x 的节点都在大于或等于 x 的节点之前。<br>你应当保留两个分区中每个节点的初始相对位置。<br>示例:</p>
+<pre><code>输入: head = 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;2, x = 3
+输出: 1-&gt;2-&gt;2-&gt;4-&gt;3-&gt;5
+</code></pre></blockquote>
+<p>思路：<br>两个指针一个叫 prev 一个叫 next，遍历链表的同时分别将值对应到 prev 和 next 里面<br>最终结束的时候再讲 prev 和 next 拼接起来并返回</p>
+<p>时间复杂度 O(n) 空间复杂度 O(1)</p>
+<pre><code class="javascript">const partition = (head, x) =&gt; {
+  // 特殊处理
+  if (head === null || head.next === null) {
+    return head
+  }
+  // 建两个指针 prev 放 &lt; x 的节点
+  let prev = new ListNode()
+  const prevHead = prev
+  // next 放 &gt;= x 的 节点
+  let next = new ListNode()
+  const nextHead = next
+  // 遍历节点
+  while (head !== null) {
+    // 判断并放入节点到对应链表
+    if (head.val &lt; x) {
+      prev.next = head
+      prev = prev.next
+    } else {
+      next.next = head
+      next = next.next
+    }
+    head = head.next
+  }
+  // ！！处理尾节点 next 值
+  next.next = null
+  // 合并
+  prev.next = nextHead
+
+  return prevHead
+};
+</code></pre>
+<h2 id="反转链表-II-LeetCode-92"><a href="#反转链表-II-LeetCode-92" class="headerlink" title="反转链表 II LeetCode#92"></a>反转链表 II LeetCode#92</h2><blockquote>
+<p>反转从位置 m 到 n 的链表。请使用一趟扫描完成反转。<br>说明:<br>1 ≤ m ≤ n ≤ 链表长度。<br>示例:</p>
+<pre><code>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL, m = 2, n = 4
+输出: 1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;NULL
+</code></pre></blockquote>
+<h4 id="1-拼接法"><a href="#1-拼接法" class="headerlink" title="1. 拼接法"></a>1. 拼接法</h4><p>依次遍历，并记录关键节点和链表</p>
+<p>x &lt; m 时记录 prev<br>x = m 时记录 mNode<br>当 m &lt; x &lt;= n 时将当前节点插入 mNode 之前<br>x = n 时记录 nNode<br>记录 nNode.next 为 next</p>
+<p>那最终结果就是 prev -&gt; nNode ~ mNode -&gt; next 且 nNode ~ mNode 已经反转好了</p>
+<p>时间复杂度是 O(n) 空间复杂度是 O(1)</p>
+<pre><code class="javascript">const reverseBetween = (head, m, n) =&gt; {
+  if (m === n || head === null) {
+    return head
+  }
+  const _head = new ListNode()
+
+  let currentKey = 1
+
+  // 第 m 个节点前面的所有节点
+  let prev = _head
+
+  // 第 m 个节点
+  let mNode = null
+  // 第 n 个节点
+  let nNode = null
+  // 第 n 个几点的后一个节点
+  let next = null
+  // 当前节点
+  let curNode = head
+  // 反向插入的几点
+  let point = null
+
+ // 最终结果 可以近似为
+ // prev -&gt; nNode -&gt; n - m - 1 个 point 翻转而成的节点 -&gt; mNode -&gt; next
+
+  while (curNode !== null) {
+    const cNext = curNode.next
+
+    // 保存 prev 链
+    if (currentKey &lt; m) {
+      prev.next = curNode
+      prev = prev.next
+    }
+
+    // 保存 m 节点，初始化 point 节点
+    if (currentKey === m) {
+      mNode = curNode
+      point = mNode
+    }
+
+    // 保存 n 节点，next 节点
+    if (currentKey === n) {
+      nNode = curNode
+      next = cNext
+    }
+
+    // 反转节点
+    if(currentKey &gt; m &amp;&amp; currentKey &lt;= n) {
+      curNode.next = point
+      point = curNode
+    }
+
+    curNode = cNext
+    currentKey++
+  }
+
+  // 拼接合并节点
+  prev.next = nNode
+  mNode.next = next
+
+  return _head.next
+}
+</code></pre>
+<h4 id="2-gt-LeetCode-官方解答"><a href="#2-gt-LeetCode-官方解答" class="headerlink" title="2. -&gt; LeetCode 官方解答"></a>2. -&gt; <a href="https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/fan-zhuan-lian-biao-ii-by-leetcode/" target="_blank" rel="noopener">LeetCode 官方解答</a></h4><h2 id="环形链表-LeetCode-141"><a href="#环形链表-LeetCode-141" class="headerlink" title="环形链表 LeetCode#141"></a>环形链表 LeetCode#141</h2><blockquote>
+<p>给定一个链表，判断链表中是否有环。<br>为了表示给定链表中的环，我们使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。 如果 pos 是 -1，则在该链表中没有环。</p>
+<pre><code>示例 1：
+输入：head = [3,2,0,-4], pos = 1
+输出：true
+解释：链表中有一个环，其尾部连接到第二个节点。
+</code></pre><p><img src="/2019/07/14/算法/链表/LeetCode141Question1.png" alt="LeetCode141Question1"></p>
+<pre><code>示例 2：
+输入：head = [1,2], pos = 0
+输出：true
+解释：链表中有一个环，其尾部连接到第一个节点。
+</code></pre><p><img src="/2019/07/14/算法/链表/LeetCode141Question2.png" alt="LeetCode141Question2"></p>
+<pre><code>示例 3：
+输入：head = [1], pos = -1
+输出：false
+解释：链表中没有环。
+</code></pre><p><img src="/2019/07/14/算法/链表/LeetCode141Question3.png" alt="LeetCode141Question3"><br>进阶：<br>你能用 O(1)（即，常量）内存解决此问题吗？</p>
+</blockquote>
+<h4 id="1-缓存法"><a href="#1-缓存法" class="headerlink" title="1. 缓存法"></a>1. 缓存法</h4><p>我的解法是用一个数组保存每个节点，然后判断 Node 是否存在于数组中，如果存在了即为有环形<br>但是这种算法的时间复杂度是 O(n ^ n) 空间复杂度是 O(n)</p>
+<p>如果可以用 hash 表开存储就可以将时间复杂变为 O(n)</p>
+<pre><code class="javascript">// arrary memory
+const hasCycle = (head) =&gt; {
+  if(head === null) {
+    return false
+  }
+  const memory = []
+  while (head !== null) {
+    if (memory.indexOf(head) &gt; -1) {
+      return true
+    }
+    memory.push(head)
+    head = head.next
+  }
+  return false
+}
+// hash memory
+const hasCycle = (head) =&gt; {
+  if(head === null) {
+    return false
+  }
+  // set 模拟 hash table
+  const memory = new Set()
+  while (head !== null) {
+    if (memory.has(head)) {
+      return true
+    }
+    memory.add(head)
+    head = head.next
+  }
+  return false
+}
+
+</code></pre>
+<h4 id="2-双指针法-1"><a href="#2-双指针法-1" class="headerlink" title="2. 双指针法"></a>2. 双指针法</h4><p>LeetCode 解法之二，这种解法没有想到。这里就说下 LeetCode 官方的解释。</p>
+<p>通过使用具有 不同速度 的快、慢两个指针遍历链表，空间复杂度可以被降低至 O(1)。慢指针每次移动一步，而快指针每次移动两步。</p>
+<p>如果列表中不存在环，最终快指针将会最先到达尾部，此时我们可以返回 false。</p>
+<p>现在考虑一个环形链表，把慢指针和快指针想象成两个在环形赛道上跑步的运动员（分别称之为慢跑者与快跑者）。而快跑者最终一定会追上慢跑者。这是为什么呢？考虑下面这种情况（记作情况 A）- 假如快跑者只落后慢跑者一步，在下一次迭代中，它们就会分别跑了一步或两步并相遇。</p>
+<pre><code class="javascript">const hasCycle = (head) =&gt; {
+  if (head === null || head.next === null) {
+    return false
+  }
+  let slow = head
+  let fast = head.next
+  while (slow !== fast) {
+    // 快指针结束表示无环
+    if (fast === null || fast.next === null) {
+      return false
+    }
+    // 慢指针走一步
+    slow = slow.next
+    // 快指针走两步
+    fast = fast.next.next
+  }
+  // 慢指针和快指针相遇
+  return true
+}
+</code></pre>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            id: "链表20190714",
+            clientID: '68a5215ea19e888dcfd5',
+            clientSecret: '51f45b58b869b9f474530ca3621d17d927cb5d37',
+            repo: 'hongxuWei.github.io',
+            owner: 'hongxuWei',
+            admin: ['hongxuWei'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/07/31/算法/链表2/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            下一篇文章
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/06/17/前端/前端性能优化/" id="post_nav-older" class="next-content">
+            上一篇文章
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpeg" alt="Hongxu's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        hongxu.wei@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:hongxu.wei@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/demo/" title="例子">
+                
+                    <i class="material-icons sidebar-material-icons">code</i>
+                
+                例子
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags/" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_queue</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline/" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">event</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links/" title="友链">
+                
+                    <i class="material-icons sidebar-material-icons">thumb_up_alt</i>
+                
+                友链
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/hongxuWei/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="http://www.linkedin.com/in/%E7%BA%A2%E6%97%AD-%E9%AD%8F-01ab90161/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/p/1005053602843641" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+        --></a>
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hongxu's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+</script>
+
+                </main>
+            </div>
+             
+                <!-- PWA JS File -->
+                <script>
+                    if(navigator.serviceWorker != null) {
+                        window.addEventListener('DOMContentLoaded', function() {
+                            // 执行注册
+                            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+
+                            }).catch(function(err) {
+                                // Eat it!
+                            });
+                        });
+                    }
+                </script>
+            
+        </body>
+    
+</html>

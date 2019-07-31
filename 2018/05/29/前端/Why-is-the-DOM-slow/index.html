@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Why is the DOM slow? | 
+        
+        Hongxu&#39;s Blog
+    </title>
+
+    
+        <!-- PWA manifest -->
+        <link rel="manifest" href="/manifest.json">
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/icon .png">
+    <link rel="icon" href="/img/icon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="魏红旭的Blog">
+    <meta name="keywords" content=",Q&A">
+    <meta name="theme-color" content="#00BCD4">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?PLcb3nZqoD+sQzt9XcAAVg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?1HNAkKNMjDG4DBqzfiUMXg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #00BCD4 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #00BCD4 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #00BCD4 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hongxu&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://hongxuWei.github.io/2018/05/29/前端/Why-is-the-DOM-slow/">
+    <meta name="msapplication-navbutton-color" content="#00BCD4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hongxu&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/icon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://hongxuWei.github.io/2018/05/29/前端/Why-is-the-DOM-slow/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Why is the DOM slow? | Hongxu&#39;s Blog">
+    <meta property="og:image" content="/img/icon.png">
+    <meta property="og:description" content="魏红旭的Blog">
+    <meta property="og:article:tag" content="Q&amp;A"> 
+
+    
+        <meta property="article:published_time" content="Tue May 29 2018 16:21:27 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jul 31 2019 18:02:23 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://hongxuWei.github.io/2018/05/29/前端/Why-is-the-DOM-slow/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://hongxuWei.github.io/2018/05/29/前端/Why-is-the-DOM-slow/index.html",
+    "headline": "Why is the DOM slow?",
+    "datePublished": "Tue May 29 2018 16:21:27 GMT+0800",
+    "dateModified": "Wed Jul 31 2019 18:02:23 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Hongxu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpeg"
+        },
+        "description": "欢迎来到 Hongxu 的 Blog"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hongxu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/icon.png"
+        }
+    },
+    "keywords": ",Q&A",
+    "description": "魏红旭的Blog",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#为什么大家都说-DOM-操作很慢"><span class="post-toc-number">1.</span> <span class="post-toc-text">为什么大家都说 DOM 操作很慢</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是-DOM-Document-Object-Model"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">什么是 DOM (Document Object Model)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM-访问和修改"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">DOM 访问和修改</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#HTML-集合"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">HTML 集合</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重绘和重排"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">重绘和重排</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浏览器的构成"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">浏览器的构成</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Rendering-engine-所做的工作"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">Rendering engine 所做的工作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#浏览器何时重排"><span class="post-toc-number">1.4.1.2.</span> <span class="post-toc-text">浏览器何时重排</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查询并刷新导致渲染树改变"><span class="post-toc-number">1.4.1.3.</span> <span class="post-toc-text">查询并刷新导致渲染树改变</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何优化？"><span class="post-toc-number">1.4.1.4.</span> <span class="post-toc-text">如何优化？</span></a></li></ol></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Why is the DOM slow?
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpeg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Hongxu</strong>
+        <span>5月 29, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Q-A/">Q&A</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Why is the DOM slow?&url=https://hongxuWei.github.io/2018/05/29/前端/Why-is-the-DOM-slow/index.html&pic=https://hongxuWei.github.io/img/icon .png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://hongxuWei.github.io/2018/05/29/前端/Why-is-the-DOM-slow/index.html&title=Why is the DOM slow?" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hongxu&#39;s Blog&title=Why is the DOM slow?&summary=魏红旭的Blog&pics=https://hongxuWei.github.io/img/icon .png&url=https://hongxuWei.github.io/2018/05/29/前端/Why-is-the-DOM-slow/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="为什么大家都说-DOM-操作很慢"><a href="#为什么大家都说-DOM-操作很慢" class="headerlink" title="为什么大家都说 DOM 操作很慢"></a>为什么大家都说 DOM 操作很慢</h1><p>之前在<a href="https://hongxuwei.github.io/2018/05/22/%E5%89%8D%E7%AB%AF/React-1/">学习 <em>React</em> </a>的时候看到 <em>React</em> 的优势的时候就说， <em>React</em> 的 diff 算法，会“最小化”处理 DOM。因为操作 DOM 的开销太大了。频繁操作 DOM 会有性能问题。</p>
+<p>那么今天就来了解下。为什么操作 DOM 会很慢。</p>
+<h2 id="什么是-DOM-Document-Object-Model"><a href="#什么是-DOM-Document-Object-Model" class="headerlink" title="什么是 DOM (Document Object Model)"></a>什么是 DOM (Document Object Model)</h2><p>DOM 是一个独立于语言的，使用 <em>XML</em> 和 HTML 文档操作的接口。在浏览器中主要与 HTML 文档打交道。 DOM APIs 主要用于访问这些文档中的数据。</p>
+<p>DOM 是个 API 浏览器通常要求 DOM 实现和 JavaScript 实现保持相互独立。例如 Chrome 中 使用 WebKit 的 WebCore 库渲染页面，但是具有一个分离的 JavaScript 引擎 V8</p>
+<blockquote>
+<p>Inherently Slow<br>这对性能意味着，两个独立的部分以功能接口连接就会带来性能损耗。一个恒形象的比喻是把 DOM 看成一个岛屿，把 JavaScript 看成另一个岛屿，两者之间以一座收费桥连接。每次 JavaScript 需要访问 DOM 时，需要过桥，交一次“过桥费”。 DOM 操作越多，费用越高。一般建议是尽量减少过桥次数。—— 《高性能 JavaScript》</p>
+</blockquote>
+<p><em>Note: 目前大多数的浏览器对此做的优化已经足够多，访问 DOM 的最主要的开销也不再次，而是每次 DOM 操作的“后遗症”——浏览器的重排（reflow） 和 重绘（repaint）</em></p>
+<h2 id="DOM-访问和修改"><a href="#DOM-访问和修改" class="headerlink" title="DOM 访问和修改"></a>DOM 访问和修改</h2><p>访问一个 DOM 元素的代价就是交一次“过桥费”。修改元素的代价可能更多，因为它经常导致浏览器重新计算页面结构变化。</p>
+<p>访问或修改元素最差的情况是使用循环去做，特别是是 HTML 集合中使用。比较下面两个例子。</p>
+<pre><code class="JavaScript">function innerHTMLLoop() {
+    for(var count = 0; count &lt; 1000; count++) {
+        /* 在循环中访问 DOM 和修改 DOM。操作了 1000 次
+           每次先获得 DOM innerHTML 中的内容，然后去更新它。*/
+        document.getElementById().innerHTML += &quot;a&quot;;
+    }
+}
+</code></pre>
+<pre><code class="JavaScript">function innerHTMLLoop() {
+    var content = &quot;&quot;;
+    for(var count = 0; count &lt; 1000; count++) {
+        content += &quot;a&quot;;  // 循环保存变量，然后一次性写入。
+    }
+    // 只访问和修改了一次 DOM
+    document.getElementById().innerHTML += content;
+}
+</code></pre>
+<p>在所有浏览器中，第二张方法的运行速度都比一次快得多。</p>
+<h2 id="HTML-集合"><a href="#HTML-集合" class="headerlink" title="HTML 集合"></a>HTML 集合</h2><p>HTML 集合是用于存放 DOM 节点引用的类数组对象。下列函数返回值就是：</p>
+<ul>
+<li>document.getElementsByName()</li>
+<li>document.getElementsByClassName()</li>
+<li>document.getElementsByTagName()</li>
+</ul>
+<p>下列属性也是</p>
+<ul>
+<li>document.images</li>
+<li>doucment.links</li>
+<li>document.forms</li>
+<li>document.forms[0].elements</li>
+<li>document.anchors</li>
+</ul>
+<p>HTML 集合实际上是在查询文档，当更新信息时，每次都会重复执行查询操作。</p>
+<p>来看看下面的代码有什么问题吧。</p>
+<pre><code class="JavaScript">var divs = document.getElementsByTagName(&#39;div&#39;);
+for (var i = 0; i &lt; divs.length; i++) {
+    document.body.appendChild(document.createElement(&#39;div&#39;));
+}
+</code></pre>
+<p>循环中的判断条件是 <code>divs</code> 的长度，但是每次循环的时候会自动添加一个 <code>div元素</code> 到 body 中，所以每次查询 <code>length</code> 都会改变，导致死循环。</p>
+<p>而遍历数组明显会快于同样大小的 HTML 集合。所以需要多次用到同一个 HTML 集合的时候可以考虑将集合中的元素拷贝到一个数组中，然后去遍历那个数组。</p>
+<h2 id="重绘和重排"><a href="#重绘和重排" class="headerlink" title="重绘和重排"></a>重绘和重排</h2><p>首先要了解浏览器如何展示一个网页的。</p>
+<h3 id="浏览器的构成"><a href="#浏览器的构成" class="headerlink" title="浏览器的构成"></a>浏览器的构成</h3><p>浏览器的主要构成如下：</p>
+<p class="center"><img src="/2018/05/29/前端/Why-is-the-DOM-slow/layers.png" alt="Layers"></p>
+
+<p class="center">浏览器主要组件</p>
+
+<p>包含了：</p>
+<ul>
+<li><strong>The user interface</strong>: 包含了地址栏，前进后退按钮…等等除了请求页面窗口之外的地方。</li>
+<li><strong>The browser engine</strong>: 请求和操作渲染引擎的接口</li>
+<li><strong>The rendering engine</strong>: 负责展现请求页面。例如请求内容是个 HTML 它负责解析 HTML 和 CSS 并且显示</li>
+<li><strong>Networking</strong>: 完成网络调用。例如 HTTP 请求，它是平台无关的接口可以在不同平台下使用。</li>
+<li><strong>UI backend</strong>: 绘制想多选框和窗口等基本组件，具有不特定于某个平台的通用接口，底层调用用户接口</li>
+<li><strong>JavaScript interpreter</strong>: 解释执行 JS 代码</li>
+<li><strong>Data storage</strong>: 属于持久层，浏览器需要在硬盘中保存像 cookies 的各种数据。</li>
+</ul>
+<h4 id="Rendering-engine-所做的工作"><a href="#Rendering-engine-所做的工作" class="headerlink" title="Rendering engine 所做的工作"></a>Rendering engine 所做的工作</h4><p>渲染引擎搜先通过网络获得所请求文档的内容，通常以 8K 分块的方式完成。</p>
+<p>下面是渲染引擎在获取内容后的基本流程：</p>
+<p class="center"><img src="/2018/05/29/前端/Why-is-the-DOM-slow/mainflow.png" alt="mainflow"></p>
+
+<p class="center">解析 HTML 构建 DOM 树 → 构建渲染树 → 布局渲染树 → 绘制渲染树</p>
+
+<p class="center">渲染引擎基本流程</p>
+
+<p>获取内容后，浏览器开始解析 HTML 并将标签转化为 “Content tree(DOM tree)” 中的 DOM 节点。接着，他解析外部 CSS 文件以及 style 标签中的样式信息，这些样式信息和 HTML 中的可见性指令将用来构建 Render tree</p>
+<p>Render tree 为每个需要显示的 DOM 树节点存放至少一个节点（隐藏 DOM 元素在渲染树中没有对应节点）。渲染树上的节点称为“框”或“盒”，符合 CSS 模型的定义，将元素看做一个具有填充、边距、边框和位置的盒。Render tree 由一些包含颜色和大小等属性的矩形组成，它们将按正确的顺序显示到屏幕上。</p>
+<p>Render tree 构建好了之后，将会执行布局过程，它将确定每个节点在屏幕上的确切坐标。下一步就是绘制，遍历 Render tree 并使用 UI backend 绘制每个节点。</p>
+<p>这个过程是逐步完成的，为了更好地用户体验，渲染引擎将会尽可能早的将内容呈现在屏幕上，不会等所有的 HTML 都解析完成之后再去构建和布局 Render tree。它是解析完一部分内容后就显示一部分内容，同时可能还在通过网络下载其余内容。</p>
+<p class="center"><img src="/2018/05/29/前端/Why-is-the-DOM-slow/webkitflow.png" alt="Webkit flow"></p>
+
+<p class="center">Webkit 渲染引擎主流程</p>
+
+<p class="center"><img src="/2018/05/29/前端/Why-is-the-DOM-slow/geckoflow.jpg" alt="Gecko flow"></p>
+
+<p class="center">Geoko 渲染引擎主流程</p>
+
+<p>影响页面展示的因素有许多，比如 link 位置会影响首屏显示.这里只讨论 layout 相关内容。</p>
+<p>paint 是一个耗时的过程，但是 layout 是一个更耗时的过程。</p>
+<p>当 DOM 改变影响到元素的几何属性（宽和高）———— 例如改变了边框宽度或是在段落中添加文字，将发生一系列后续动作 ———— 浏览器需要重新计算元素的几何属性，而且其他元素的几何属性和位置也会因此改变受到影响。浏览器使渲染树上受到的影响的部分失效，然后重构渲染树。这个过程被称作重排（reflow）。重排完成时，浏览器会在一个重绘进程中重新绘制屏幕上受影响的部分。</p>
+<p>不是所有的 DOM 改变都会影响几何属性。比如，改变一个元素的背景颜色不会影响它的宽度和高度。在这种情况下，只需要重绘，因为元素的布局没有改变。</p>
+<p>重绘和重排是负担很重的操作，可能导致网页应用的用户界面是去响应。所以十分有必要尽可能减少此类事情的发生。</p>
+<h4 id="浏览器何时重排"><a href="#浏览器何时重排" class="headerlink" title="浏览器何时重排"></a>浏览器何时重排</h4><p>想要最小化重排次数，要先了解什么情况下浏览器会进行重排。</p>
+<ul>
+<li><strong>Page renders initially</strong>: 页面初始渲染</li>
+<li><strong>Visible DOM elements are added or removed</strong>: 可见元素的添加或删除</li>
+<li><strong>Elements change position</strong>: 元素位置改变</li>
+<li><strong>Elements change size (because of a change in margin, padding, border thickness, width, height, etc.)</strong>: 由于 margin, padding, border-width, width, height 等属性导致的元素大小改变</li>
+<li><strong>Content is changed (text changes or an image is replaced with on of a different size)</strong>: 文本改变或图片被另一个不同尺寸的图片替换时导致的内容改变</li>
+<li><strong>Browser window is resized</strong>: 浏览器窗口大小改变</li>
+</ul>
+<p>根据改变的性质，渲染树上或大或小的一部分需要重新计算，某些改变可能导致重排整个页面：例如滚动条出现时。</p>
+<h4 id="查询并刷新导致渲染树改变"><a href="#查询并刷新导致渲染树改变" class="headerlink" title="查询并刷新导致渲染树改变"></a>查询并刷新导致渲染树改变</h4><p>因为计算量和每次重排有关，大多数浏览器通过队列化化修改和批量显示优化重排过程。然而，我们可能不经意之间强迫队列刷新并要求所有改变的部分立刻应用。当我们查询一些布局信息的时候会导致浏览器更新渲染树。</p>
+<p>如下方法：</p>
+<ul>
+<li>offsetTop, offsetLeft, offsetWidth, offsetHeight</li>
+<li>scrollTop, scrollLeft, scrollWidth, scrollHeight</li>
+<li>clientTop, clientLeft, clientWidth, clientHeight</li>
+<li>getComputedStyle() ( currentStyle() in IE)</li>
+</ul>
+<p>等等这些布局信息由这些属性和方法返回最新的数据，所以浏览器不得不运行渲染队列中待改变的项目并重新排版以返回正确的值。</p>
+<p><em>拓展： <a href="https://csstriggers.com/" target="_blank" rel="noopener">会导致重排和重绘的 CSS 属性</a></em></p>
+<h4 id="如何优化？"><a href="#如何优化？" class="headerlink" title="如何优化？"></a>如何优化？</h4><p>下面的例子导致了三次重排</p>
+<pre><code class="JavaScript">// Read
+var h1 = element1.clientHeight;
+
+// Write (invalidates layout)
+element1.style.height = (h1 * 2) + &#39;px&#39;;
+
+// Read (triggers layout)
+var h2 = element2.clientHeight;
+
+// Write (invalidates layout)
+element2.style.height = (h2 * 2) + &#39;px&#39;;
+
+// Read (triggers layout)
+var h3 = element3.clientHeight;
+
+// Write (invalidates layout)
+element3.style.height = (h3 * 2) + &#39;px&#39;;  
+</code></pre>
+<p><strong>批处理优化</strong></p>
+<pre><code class="JavaScript">// Read
+var h1 = element1.clientHeight;  
+var h2 = element2.clientHeight;  
+var h3 = element3.clientHeight;
+
+// Write (invalidates layout)
+element1.style.height = (h1 * 2) + &#39;px&#39;;  
+element2.style.height = (h2 * 2) + &#39;px&#39;;  
+element3.style.height = (h3 * 2) + &#39;px&#39;; 
+</code></pre>
+<p><strong>另外当需要对 DOM 元素进行多次修改时，可以通过以下步骤减少重绘和重排的次数</strong></p>
+<ol>
+<li>从文档中摘除该元素</li>
+<li>应用修改</li>
+<li>将元素带回文档流中</li>
+</ol>
+<p>有三种基本方法可以将 DOM 从文档中摘除</p>
+<ul>
+<li>隐藏元素，进行修改然后再显示它</li>
+<li>使用一个文档片段在已存 DOM 之外创建一个子树，然后将它拷贝到文档中（document.createDocumentFragment()）</li>
+<li>将原始元素拷贝到一个脱离文档的节点中，修改副本，然后覆盖原始元素</li>
+</ul>
+<p><strong>将元素提出动画流</strong></p>
+<p>显示和隐藏部分页面构成展开/折叠动画是一种常见的交互模式。它通常包括区域扩大的几何动画，将页面其他部分推向下方。</p>
+<p>重排版有时只影响渲染树的一小部分，但也可以影响很大的一部分，甚至整个渲染树。浏览器需要重排<br>版的部分越小，应用程序的响应速度就越快。所以当一个页面顶部的动画推移了差不多整个页面时，将引<br>发巨大的重排版动作，使用户感到动画卡顿。渲染树的大多数节点需要被重新计算，它变得更糟糕。</p>
+<p><strong>IE and :hover IE 和:hover</strong></p>
+<p>自从版本 IE7 之后，可以在任何元素（严格模式）上使用 :hover 这个 CSS 伪选择器。然而，如果大量的元素使用了 :hover 那么会降低反应速度。此问题在 IE8 中更显著。</p>
+<p><em>拓展：<a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="noopener">How browsers work</a></em></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            id: "Why is the DOM slow?20180529",
+            clientID: '68a5215ea19e888dcfd5',
+            clientSecret: '51f45b58b869b9f474530ca3621d17d927cb5d37',
+            repo: 'hongxuWei.github.io',
+            owner: 'hongxuWei',
+            admin: ['hongxuWei'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/06/07/前端/MongoDB-start/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            下一篇文章
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/05/22/前端/React-1/" id="post_nav-older" class="next-content">
+            上一篇文章
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpeg" alt="Hongxu's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        hongxu.wei@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:hongxu.wei@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/demo/" title="例子">
+                
+                    <i class="material-icons sidebar-material-icons">code</i>
+                
+                例子
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags/" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_queue</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline/" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">event</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links/" title="友链">
+                
+                    <i class="material-icons sidebar-material-icons">thumb_up_alt</i>
+                
+                友链
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/hongxuWei/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="http://www.linkedin.com/in/%E7%BA%A2%E6%97%AD-%E9%AD%8F-01ab90161/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/p/1005053602843641" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+        --></a>
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hongxu's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+</script>
+
+                </main>
+            </div>
+             
+                <!-- PWA JS File -->
+                <script>
+                    if(navigator.serviceWorker != null) {
+                        window.addEventListener('DOMContentLoaded', function() {
+                            // 执行注册
+                            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+
+                            }).catch(function(err) {
+                                // Eat it!
+                            });
+                        });
+                    }
+                </script>
+            
+        </body>
+    
+</html>

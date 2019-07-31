@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            JS 基础之：String | 
+        
+        Hongxu&#39;s Blog
+    </title>
+
+    
+        <!-- PWA manifest -->
+        <link rel="manifest" href="/manifest.json">
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/icon .png">
+    <link rel="icon" href="/img/icon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="魏红旭的Blog">
+    <meta name="keywords" content=",JavaScript">
+    <meta name="theme-color" content="#00BCD4">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?PLcb3nZqoD+sQzt9XcAAVg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?1HNAkKNMjDG4DBqzfiUMXg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #00BCD4 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #00BCD4 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #00BCD4 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hongxu&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://hongxuWei.github.io/2018/07/12/JavaScript/String/">
+    <meta name="msapplication-navbutton-color" content="#00BCD4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hongxu&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/icon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://hongxuWei.github.io/2018/07/12/JavaScript/String/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="JS 基础之：String | Hongxu&#39;s Blog">
+    <meta property="og:image" content="/img/icon.png">
+    <meta property="og:description" content="魏红旭的Blog">
+    <meta property="og:article:tag" content="JavaScript"> 
+
+    
+        <meta property="article:published_time" content="Thu Jul 12 2018 08:57:43 GMT+0800">
+        <meta property="article:modified_time" content="Wed Jul 31 2019 18:02:23 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://hongxuWei.github.io/2018/07/12/JavaScript/String/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://hongxuWei.github.io/2018/07/12/JavaScript/String/index.html",
+    "headline": "JS 基础之：String",
+    "datePublished": "Thu Jul 12 2018 08:57:43 GMT+0800",
+    "dateModified": "Wed Jul 31 2019 18:02:23 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Hongxu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpeg"
+        },
+        "description": "欢迎来到 Hongxu 的 Blog"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hongxu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/icon.png"
+        }
+    },
+    "keywords": ",JavaScript",
+    "description": "魏红旭的Blog",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性"><span class="post-toc-number">1.</span> <span class="post-toc-text">属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-length"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">String.length</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-indexOf"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">String.prototype.indexOf()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-lastIndexOf"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">String.prototype.lastIndexOf()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-includes"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">String.prototype.includes()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-startsWith"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">String.prototype.startsWith()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-endsWith"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">String.prototype.endsWith()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-slice"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">String.prototype.slice()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-split"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">String.prototype.split()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-replace"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">String.prototype.replace()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用-newSubStr-参数"><span class="post-toc-number">2.8.1.</span> <span class="post-toc-text">使用 newSubStr 参数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#指定一个函数作为参数"><span class="post-toc-number">2.8.2.</span> <span class="post-toc-text">指定一个函数作为参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-match"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">String.prototype.match()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-search"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">String.prototype.search()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-substr"><span class="post-toc-number">2.11.</span> <span class="post-toc-text">String.prototype.substr()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-substring"><span class="post-toc-number">2.12.</span> <span class="post-toc-text">String.prototype.substring()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-repeat"><span class="post-toc-number">2.13.</span> <span class="post-toc-text">String.prototype.repeat()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-padStart"><span class="post-toc-number">2.14.</span> <span class="post-toc-text">String.prototype.padStart()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-prototype-padEnd"><span class="post-toc-number">2.15.</span> <span class="post-toc-text">String.prototype.padEnd()</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                JS 基础之：String
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpeg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Hongxu</strong>
+        <span>7月 12, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=JS 基础之：String&url=https://hongxuWei.github.io/2018/07/12/JavaScript/String/index.html&pic=https://hongxuWei.github.io/img/icon .png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://hongxuWei.github.io/2018/07/12/JavaScript/String/index.html&title=JS 基础之：String" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hongxu&#39;s Blog&title=JS 基础之：String&summary=魏红旭的Blog&pics=https://hongxuWei.github.io/img/icon .png&url=https://hongxuWei.github.io/2018/07/12/JavaScript/String/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>之前也有总结和重新学习 <strong>String</strong> 的所有方法。长时间不去记忆又有所忘记。今天用博客的方式记录下来，最后用一个思维导图的形式记下来串联起来，巩固自己的记忆。</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h3 id="String-length"><a href="#String-length" class="headerlink" title="String.length"></a>String.length</h3><p>返回一个字符串的长度。这个无需多讲。只是要记住静态的 <code>String.length</code> 值为 <code>1</code>。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h3 id="String-prototype-indexOf"><a href="#String-prototype-indexOf" class="headerlink" title="String.prototype.indexOf()"></a>String.prototype.indexOf()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.indexOf(searchValue[, fromIndex])</strong></p>
+</blockquote>
+<p><strong>indexOf()</strong> 方法返回调用 String 对象中从 fromIndex 开始从左向右搜索直到第一次出现指定值的索引位置。如果未找到，返回 -1。</p>
+<p><code>searchValue</code><br>表示需要被查找的字符串</p>
+<p><code>fromIndex</code><br>表示从 <code>str</code> 的这个位置开始向后查找，可以是任意整数（如果是小数则只保留整数部分）。默认值是 <code>0</code>。如果该值小于 <code>0</code> 则当做 <code>0</code>，如果该值大于字符串长度则返回 <code>-1</code>，除非 <code>searchValue = &quot;&quot;</code> 此时返回 <code>str.length</code>。</p>
+<pre><code class="JavaScript">// fromIndex 的内部机制可以用如下伪代码表示：
+String.prototype.indexOf = function(searchValue, fromIndex) {
+    fromIndex = fromIndex || 0; // 默认值为 0
+
+    // 如果 fromIndex 大于字符串长度
+    // 则判断需查找字符串是不是空字符串
+    // 如果是则返回 str.length，如果不是则返回 -1。
+    if (fromIndex &gt; this.length) {
+        return searchValue === &quot;&quot; ? this.length : -1;
+    }
+
+    // 如果 fromIndex 小于 0 则当做 0
+    if (fromIndex &lt; 0) { 
+        fromIndex = 0
+    }
+
+    fromIndex = fromIndex &gt;&gt;&gt; 0; // 取整
+}
+</code></pre>
+<hr>
+<h3 id="String-prototype-lastIndexOf"><a href="#String-prototype-lastIndexOf" class="headerlink" title="String.prototype.lastIndexOf()"></a>String.prototype.lastIndexOf()</h3><p>与 <code>indexOf</code> 相似不过是从右向左搜索。</p>
+<p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.lastIndexOf(searchValue[, fromIndex])</strong></p>
+</blockquote>
+<p><strong>lastIndexOf()</strong> 方法返回调用 String 对象中从 fromIndex 开始从右向左搜索直到第一次出现指定值的索引位置。如果未找到，返回 -1。</p>
+<p><code>searchValue</code><br>表示需要被查找的字符串</p>
+<p><code>fromIndex</code><br>表示从 <code>str</code> 的这个位置开始向后查找，可以是任意整数（如果是小数则只保留整数部分）。默认值是 <code>str.length</code>。如果该值小于 <code>0</code> 则返回 <code>-1</code>，除非 <code>searchValue = &quot;&quot;</code> 此时返回 <code>0</code>。如果该值大于字符串长度当做 <code>str.length</code>。</p>
+<!--```JavaScript
+// fromIndex 的内部机制可以用如下伪代码表示：
+String.prototype.lastIndexOf = function(searchValue, fromIndex) {
+    fromIndex = fromIndex || this.length; // 默认值为 str.length
+
+    // 如果 fromIndex 小于 0
+    // 则判断需查找字符串是不是空字符串
+    // 如果是则返回 0，如果不是则返回 -1。
+    if (fromIndex < 0) {
+        return searchValue === "" ? this.length : -1;
+    }
+
+    // 如果 fromIndex 大于 str.length 则当做 str.length
+    if (fromIndex > str.length) { 
+        fromIndex = str.length;
+    }
+
+    fromIndex = fromIndex >>> 0; // 取整
+
+}
+```-->
+<hr>
+<h3 id="String-prototype-includes"><a href="#String-prototype-includes" class="headerlink" title="String.prototype.includes()"></a>String.prototype.includes()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.includes(searchString[, position])</strong></p>
+</blockquote>
+<p><code>includes()</code> 方法用于判断一个字符串是否包含在另一个字符串中，根据情况返回 true 或 false。</p>
+<p><code>searchString</code><br>要搜索的子字符串。</p>
+<p><code>position</code><br>从当前字符串的该索引位置开始搜寻子字符串，默认值为0。</p>
+<p><strong>Polyfill</strong></p>
+<pre><code class="JavaScript">if(!String.prototype.includes) {
+    String.prototype.includes = function(searchString, position) {
+        &#39;use strict&#39;;
+        if (typeof position !== &#39;number&#39;) {
+            position = 0;
+        }
+        if (position + searchString.length &gt; this.length) {
+            return false;
+        } else {
+            return this.indexOf(searchString, position) !== -1;
+        }
+    }
+}
+</code></pre>
+<hr>
+<h3 id="String-prototype-startsWith"><a href="#String-prototype-startsWith" class="headerlink" title="String.prototype.startsWith()"></a>String.prototype.startsWith()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.startsWith(searchString [, position]);</strong></p>
+</blockquote>
+<p><code>startsWith()</code> 方法用来判断当前字符串是否是以另外一个给定的子字符串开头。</p>
+<p><code>searchString</code><br>要搜索的子字符串</p>
+<p><code>position</code><br>在 str 中搜索 searchString 的开始位置，默认值为 <code>0</code>，也就是真正的字符串开头处。</p>
+<p><strong>Polyfill</strong></p>
+<pre><code class="JavaScript">if (!String.prototype.startsWith) {
+  (function() {
+    &#39;use strict&#39;; // needed to support `apply`/`call` with `undefined`/`null`
+    var defineProperty = (function() {
+      // IE 8 only supports `Object.defineProperty` on DOM elements
+      try {
+        var object = {};
+        var $defineProperty = Object.defineProperty;
+        var result = $defineProperty(object, object, object) &amp;&amp; $defineProperty;
+      } catch(error) {}
+      return result;
+    }());
+    var toString = {}.toString;
+    var startsWith = function(search) {
+      if (this == null) {
+        throw TypeError();
+      }
+      var string = String(this);
+      if (search &amp;&amp; toString.call(search) == &#39;[object RegExp]&#39;) {
+        throw TypeError();
+      }
+      var stringLength = string.length;
+      var searchString = String(search);
+      var searchLength = searchString.length;
+      var position = arguments.length &gt; 1 ? arguments[1] : undefined;
+      // `ToInteger`
+      var pos = position ? Number(position) : 0;
+      if (pos != pos) { // better `isNaN`
+        pos = 0;
+      }
+      var start = Math.min(Math.max(pos, 0), stringLength);
+      // Avoid the `indexOf` call if no match is possible
+      if (searchLength + start &gt; stringLength) {
+        return false;
+      }
+      var index = -1;
+      while (++index &lt; searchLength) {
+        if (string.charCodeAt(start + index) != searchString.charCodeAt(index)) {
+          return false;
+        }
+      }
+      return true;
+    };
+    if (defineProperty) {
+      defineProperty(String.prototype, &#39;startsWith&#39;, {
+        &#39;value&#39;: startsWith,
+        &#39;configurable&#39;: true,
+        &#39;writable&#39;: true
+      });
+    } else {
+      String.prototype.startsWith = startsWith;
+    }
+  }());
+}
+</code></pre>
+<hr>
+<h3 id="String-prototype-endsWith"><a href="#String-prototype-endsWith" class="headerlink" title="String.prototype.endsWith()"></a>String.prototype.endsWith()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.endsWith(searchString [, position]);</strong></p>
+</blockquote>
+<p><code>endsWith()</code> 方法用来判断当前字符串是否是以另外一个给定的子字符串结尾的。</p>
+<p><code>searchString</code><br>要搜索的子字符串</p>
+<p><code>position</code><br>在 str 中搜索 searchString 的结束位置，默认值为 <code>str.length</code>，也就是真正的字符串结尾处。</p>
+<p><strong>Polyfill</strong></p>
+<pre><code class="JavaScript">if (!String.prototype.endsWith) {
+    String.prototype.endsWith = function( searchString, position) {
+        if (position === undefined || position &gt; this.length) {
+            position = this.length;
+        }
+        return this.substring(position - searchString.length, position) === searchString;
+    };
+}
+</code></pre>
+<hr>
+<h3 id="String-prototype-slice"><a href="#String-prototype-slice" class="headerlink" title="String.prototype.slice()"></a>String.prototype.slice()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.slice(beginSlice[, endSlice])</strong></p>
+</blockquote>
+<p>slice() 方法提取一个字符串的一部分，并返回一新的字符串。</p>
+<p><code>beginSlice</code><br>从该索引（以 0 为基数）处开始提取原字符串中的字符。如果值为负数，会被当做 <code>str.length + beginSlice</code>，如果是小数则保留整数部分，如果超出 <code>str.length</code> 则返回空字符串。</p>
+<p><code>endSlice</code><br>在该索引（以 0 为基数）处结束提取字符串。如果省略该参数，slice会一直提取到字符串末尾。如果该参数为负数，则被看作是 <code>str.length + endSlice</code>，如果是小数则保留整数部分，如果超出 <code>str.length</code> 则当做 <code>str.length</code>。</p>
+<p><em>注意：提取的字符包括 <code>beginSlice</code> 位置的字符但是不包括 <code>endSlice</code> 位置的字符，如果 <code>endSlice &lt;= beginSlice</code> 则返回空字符串。</em></p>
+<p>常用操作：配合 <code>Object.prototype.toString</code> 判断一个变量的类型</p>
+<pre><code class="JavaScript">function type(v) {
+    return Object.prototype.toString.call(v).slice(8, -1);
+}
+</code></pre>
+<!--```JavaScript
+// 这两个参数的内部机制可以用如下伪代码表示：
+String.prototype.slice = function(beginSlice, endSlice) {
+    let strLen = str.length;
+
+    endSlice = endSlice || strLen;
+    // 如果 endSlice <= beginSlice 则返回空字符串
+    if (endSlice <= beginSlice) {
+        return "";
+    }
+    // 如果 beginSlice 超出 str.length 则返回空字符串
+    if (beginSlice >= strLen) {
+        return "";
+    }
+
+    // 如果 endSlice 则当做 str.length
+    if (endSlice > strLen) {
+        endSlice = strLen;
+    }
+
+    // 如果参数值为负数则被当作 str.length + beginSlice
+    if(beginSlice < 0) {
+        beginSlice += strLen
+    }
+    if(endSlice < 0) {
+        endSlice += strLen
+    }
+
+    // 取整
+    beginSlice = beginSlice >>> 0;
+    endSlice = endSlice >>> 0;
+
+}
+```-->
+<hr>
+<h3 id="String-prototype-split"><a href="#String-prototype-split" class="headerlink" title="String.prototype.split()"></a>String.prototype.split()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.split([separator[, limit]])</strong></p>
+</blockquote>
+<p><code>split()</code> 方法使用指定的分隔符字符串将一个字符串分割成字符串数组。 </p>
+<p><code>separator</code><br>表示每个拆分的位置。<code>separator</code> 可以是一个字符串或正则表达式。如果纯文本分隔符包含多个字符，则必须找到整个字符串来表示分割点。如果省略或在 <code>str</code> 中不出现分隔符，则返回的数组包含一个由整个字符串组成的元素。如果分隔符为空字符串，则将 <code>str</code> 原字符串中每个字符的数组形式返回。</p>
+<p><code>limit</code><br>一个整数（如果是小数时，只保留整数部分，如果是负值则相当于无限制），限定返回的字符串数组的长度。当提供此参数时，<code>split</code> 方法会在指定分隔符的每次出现时分割该字符串，在数组长度达到限制长度时返回，后面如果还有剩下的字符串也会忽略掉。</p>
+<p><em>Note: 如果 separator 包含捕获括号（capturing parentheses），则其匹配结果将会包含在返回的数组中。</em></p>
+<pre><code class="JavaScript">var str = &quot;Hello 1 word.&quot;;
+
+str.split(/(\d)/);   // [&quot;Hello &quot;, &quot;1&quot;, &quot; word.&quot;]
+str.split(/\d/);     // [&quot;Hello &quot;, &quot; word.&quot;]
+str.split(&quot;&quot;);       // [&quot;H&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;, &quot; &quot;, &quot;1&quot;, &quot; &quot;, &quot;w&quot;, &quot;o&quot;, &quot;r&quot;, &quot;d&quot;, &quot;.&quot;]
+str.split(&quot;&quot;, -1);   // [&quot;H&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;, &quot; &quot;, &quot;1&quot;, &quot; &quot;, &quot;w&quot;, &quot;o&quot;, &quot;r&quot;, &quot;d&quot;, &quot;.&quot;]
+str.split(&quot;&quot; , 3);   // [&quot;H&quot;, &quot;e&quot;, &quot;l&quot;]
+str.split(&quot;&quot; , 3.5); // [&quot;H&quot;, &quot;e&quot;, &quot;l&quot;]
+</code></pre>
+<hr>
+<h3 id="String-prototype-replace"><a href="#String-prototype-replace" class="headerlink" title="String.prototype.replace()"></a>String.prototype.replace()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.replace(regexp|substr, newSubStr|function)</strong></p>
+</blockquote>
+<p><code>replace()</code> 方法返回一个由替换值替换一些或所有匹配的模式后的新字符串。模式可以是一个字符串或者一个正则表达式, 替换值可以是一个字符串或者一个每次匹配都要调用的函数。</p>
+<p><em>Note: 原字符串不会改变。</em></p>
+<p><code>regexp|substr</code><br>所匹配的内容会被第二个参数的返回值替换掉。</p>
+<p><code>newSubStr</code><br>用于替换掉第一个参数在原字符串中的匹配部分的字符串。该字符串中可以内插一些特殊的变量名。</p>
+<p><code>function</code><br>一个用来创建新子字符串的函数，该函数的返回值将替换掉第一个参数匹配到的结果。</p>
+<h4 id="使用-newSubStr-参数"><a href="#使用-newSubStr-参数" class="headerlink" title="使用 newSubStr 参数"></a>使用 <code>newSubStr</code> 参数</h4><table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$$</td>
+<td>插入一个 <code>&quot;$&quot;</code></td>
+</tr>
+<tr>
+<td>$&amp;</td>
+<td>插入匹配的子串</td>
+</tr>
+<tr>
+<td>$`</td>
+<td>插入当前匹配子串左边的内容</td>
+</tr>
+<tr>
+<td>$’</td>
+<td>插入当前匹配子串右边的内容</td>
+</tr>
+<tr>
+<td>$n</td>
+<td>第一个参数是 RegExp 对象，并且 n 是个小于100的非负整数，那么插入第 n 个括号匹配的字符串</td>
+</tr>
+</tbody>
+</table>
+<h4 id="指定一个函数作为参数"><a href="#指定一个函数作为参数" class="headerlink" title="指定一个函数作为参数"></a>指定一个函数作为参数</h4><p>你可以指定一个函数作为第二个参数。在这种情况下，当匹配执行后， 该函数就会执行。 函数的返回值作为替换字符串。 (注意:  上面提到的特殊替换参数在这里不能被使用。) 另外要注意的是， 如果第一个参数是正则表达式， 并且其为全局匹配模式， 那么这个方法将被多次调用， 每次匹配都会被调用。</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>match</td>
+<td>匹配的子串。（对应于上述的$&amp;。）</td>
+</tr>
+<tr>
+<td>p1,p2, …</td>
+<td>如果 replace() 方法的第一个参数是一个 RegExp 对象，则代表第n个括号匹配的字符串。</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>匹配到的子字符串在原字符串中的偏移量。</td>
+</tr>
+<tr>
+<td>string</td>
+<td>被匹配的原字符串。</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="String-prototype-match"><a href="#String-prototype-match" class="headerlink" title="String.prototype.match()"></a>String.prototype.match()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.match(regexp)</strong></p>
+</blockquote>
+<p><code>match()</code> 方法检索匹配项，并以数组的方式返回结果。</p>
+<p><code>regexp</code><br>一个正则表达式对象。如果传入一个非正则表达式对象，则会隐式地使用 new RegExp(obj) 将其转换为一个 RegExp。如果不传参数，那么会返回一个包含空字符串的 Array ：[“”]（具体结果会因浏览器差异而不同，但是都返回数组且第一项为空字符串）。</p>
+<pre><code class="JavaScript">var str1 = &quot;NaN means not a number. Infinity contains -Infinity and +Infinity in JavaScript.&quot;,
+    str2 = &quot;My grandfather is 65 years old and My grandmother is 63 years old.&quot;,
+    str3 = &quot;The contract was declared null and void.&quot;;
+
+str1.match(&quot;number&quot;);   // &quot;number&quot; 是字符串。返回[&quot;number&quot;]
+str1.match(NaN);        // NaN的类型是number。返回[&quot;NaN&quot;]
+str1.match(Infinity);   // Infinity的类型是number。返回[&quot;Infinity&quot;]
+str1.match(+Infinity);  // 返回[&quot;Infinity&quot;]
+str1.match(-Infinity);  // 返回[&quot;-Infinity&quot;]
+str2.match(65);         // 返回[&quot;65&quot;]
+str2.match(+65);        // 有正号的number。返回[&quot;65&quot;]
+str3.match(null);       // 返回[&quot;null&quot;]
+</code></pre>
+<hr>
+<h3 id="String-prototype-search"><a href="#String-prototype-search" class="headerlink" title="String.prototype.search()"></a>String.prototype.search()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.search(regexp)</strong></p>
+</blockquote>
+<p><code>search()</code> 方法检索匹配项，并以返回首次匹配项的索引，如果没有返回 -1。</p>
+<p><code>regexp</code><br>一个正则表达式对象。如果传入一个非正则表达式对象，则会隐式地使用 new RegExp(obj) 将其转换为一个 RegExp。</p>
+<hr>
+<h3 id="String-prototype-substr"><a href="#String-prototype-substr" class="headerlink" title="String.prototype.substr()"></a>String.prototype.substr()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.substr(start[, length])</strong></p>
+</blockquote>
+<p><code>substr()</code> 方法返回一个字符串中从指定位置开始到指定字符数的字符。</p>
+<p><code>start</code><br>开始提取字符的位置。如果为负值，则被看作 <code>str.length + start</code>，如果为小数则保留整数部分。</p>
+<p><code>length</code><br>提取的字符数，如果为小数则保留整数部分，如果 <code>start + length &gt; str.length</code> 则返回截取到字符串末尾，如果不传值默认截取到字符串末尾。</p>
+<hr>
+<h3 id="String-prototype-substring"><a href="#String-prototype-substring" class="headerlink" title="String.prototype.substring()"></a>String.prototype.substring()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p><strong>str.substring(indexStart[, indexEnd])</strong></p>
+</blockquote>
+<p><code>substring()</code> 方法返回一个字符串在开始索引到结束索引之间的一个子字符串（包括开始索引位置的字符不包括结束索引位置的字符）。</p>
+<p><code>indexStart</code><br>开始提取字符的位置。</p>
+<p><code>indexEnd</code><br>结束提取字符的位置。</p>
+<p>这两个参数有如下规则：</p>
+<ul>
+<li>如果 <code>indexStart == endStart</code> 返回空字符串</li>
+<li>如果省略 <code>indexEnd</code>，返回子字符串直到字符串末尾</li>
+<li>任一参数小于 <code>0</code> 或为 <code>NaN</code> 则当做 <code>0</code></li>
+<li>任一参数大于 <code>str.length</code> 则当做 <code>str.length</code></li>
+<li>如果 <code>indexStart &gt; indexEnd</code> 则两参数值互换</li>
+</ul>
+<hr>
+<h3 id="String-prototype-repeat"><a href="#String-prototype-repeat" class="headerlink" title="String.prototype.repeat()"></a>String.prototype.repeat()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p>str.repeat(count)</p>
+</blockquote>
+<p><code>repeat()</code> 方法返回一个新字符串，该字符串包含被连接在一起的指定次数的字符串。</p>
+<p><code>count</code><br>介于0和正无穷大之间的整数 : [0, +∞) 。表示在新构造的字符串中重复了多少遍原字符串。</p>
+<p><em>Note: <code>count</code> 不在指定范围内会报错，且如果构成的字符串超过了能够容纳的最大字符串长度也会报错，即内存溢出。</em></p>
+<p><strong>Polyfill</strong></p>
+<pre><code class="JavaScript">if (!String.prototype.repeat) {
+  String.prototype.repeat = function(count) {
+    &#39;use strict&#39;;
+    if (this == null) {
+      throw new TypeError(&#39;can\&#39;t convert &#39; + this + &#39; to object&#39;);
+    }
+    var str = &#39;&#39; + this;
+    count = +count;
+    if (count != count) {
+      count = 0;
+    }
+    if (count &lt; 0) {
+      throw new RangeError(&#39;repeat count must be non-negative&#39;);
+    }
+    if (count == Infinity) {
+      throw new RangeError(&#39;repeat count must be less than infinity&#39;);
+    }
+    count = Math.floor(count);
+    if (str.length == 0 || count == 0) {
+      return &#39;&#39;;
+    }
+    // 确保 count 是一个 31 位的整数。这样我们就可以使用如下优化的算法。
+    // 当前（2014年8月），绝大多数浏览器都不能支持 1 &lt;&lt; 28 长的字符串，所以：
+    if (str.length * count &gt;= 1 &lt;&lt; 28) {
+      throw new RangeError(&#39;repeat count must not overflow maximum string size&#39;);
+    }
+    var rpt = &#39;&#39;;
+    for (;;) {
+      if ((count &amp; 1) == 1) {
+        rpt += str;
+      }
+      count &gt;&gt;&gt;= 1;
+      if (count == 0) {
+        break;
+      }
+      str += str;
+    }
+    return rpt;
+  }
+}
+</code></pre>
+<hr>
+<h3 id="String-prototype-padStart"><a href="#String-prototype-padStart" class="headerlink" title="String.prototype.padStart()"></a>String.prototype.padStart()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p>str.padStart(targetLength [, padString])</p>
+</blockquote>
+<p><code>padStart()</code> 方法用另一个字符串填充当前字符串(如果需要的话则重复填充)，返回填充后达到指定长度的字符串。从当前字符串的开始（左侧）开始填充。</p>
+<p><code>targetLength</code><br>当前字符串需要填充到的目标长度。如果这个数值小于当前字符串的长度，则返回当前字符串本身。</p>
+<p><code>padString</code><br>填充字符串。如果字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。默认值为空格。</p>
+<p><strong>Polyfill</strong></p>
+<pre><code class="JavaScript">if (!String.prototype.padStart) {
+    String.prototype.padStart = function padStart(targetLength,padString) {
+        targetLength = targetLength &gt;&gt; 0; //floor if number or convert non-number to 0;
+        padString = String(padString || &#39; &#39;);
+        if (this.length &gt; targetLength) {
+            return String(this);
+        } else {
+            targetLength = targetLength - this.length;
+            if (targetLength &gt; padString.length) {
+                //append to original to ensure we are longer than needed
+                padString += padString.repeat(targetLength / padString.length);
+            }
+            return padString.slice(0, targetLength) + String(this);
+        }
+    };
+}
+</code></pre>
+<hr>
+<h3 id="String-prototype-padEnd"><a href="#String-prototype-padEnd" class="headerlink" title="String.prototype.padEnd()"></a>String.prototype.padEnd()</h3><p><strong>语法</strong></p>
+<blockquote>
+<p>str.padEnd(targetLength [, padString])</p>
+</blockquote>
+<p><code>padEnd()</code> 方法会用一个字符串填充当前字符串（如果需要的话则重复填充），返回填充后达到指定长度的字符串。从当前字符串的末尾（右侧）开始填充。</p>
+<p><code>targetLength</code><br>当前字符串需要填充到的目标长度。如果这个数值小于当前字符串的长度，则返回当前字符串本身。</p>
+<p><code>padString</code><br>填充字符串。如果字符串太长，使填充后的字符串长度超过了目标长度，则只保留最左侧的部分，其他部分会被截断。默认值为空格。</p>
+<p><strong>Polyfill</strong></p>
+<pre><code class="JavaScript">if (!String.prototype.padEnd) {
+    String.prototype.padEnd = function padEnd(targetLength,padString) {
+        targetLength = targetLength &gt;&gt; 0; // floor if number or convert non-number to 0;
+        padString = String(padString || &#39; &#39;);
+        if (this.length &gt; targetLength) {
+            return String(this);
+        } else {
+            targetLength = targetLength-this.length;
+            if (targetLength &gt; padString.length) {
+                // append to original to ensure we are longer than needed
+                padString += padString.repeat(targetLength / padString.length);
+            }
+            return String(this) + padString.slice(0, targetLength);
+        }
+    };
+}
+</code></pre>
+<p>一图胜千言<br><img src="/2018/07/12/JavaScript/String/String.png" alt="String 思维导图"></p>
+<p>下面是 xmind 文件</p>
+<p><a href="String.xmind">String.xmind</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            id: "JS 基础之：String20180712",
+            clientID: '68a5215ea19e888dcfd5',
+            clientSecret: '51f45b58b869b9f474530ca3621d17d927cb5d37',
+            repo: 'hongxuWei.github.io',
+            owner: 'hongxuWei',
+            admin: ['hongxuWei'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/07/24/生活/NULL/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            下一篇文章
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/10/JavaScript/闭包与作用域/" id="post_nav-older" class="next-content">
+            上一篇文章
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpeg" alt="Hongxu's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        hongxu.wei@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:hongxu.wei@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/demo/" title="例子">
+                
+                    <i class="material-icons sidebar-material-icons">code</i>
+                
+                例子
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags/" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_queue</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline/" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">event</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links/" title="友链">
+                
+                    <i class="material-icons sidebar-material-icons">thumb_up_alt</i>
+                
+                友链
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/hongxuWei/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="http://www.linkedin.com/in/%E7%BA%A2%E6%97%AD-%E9%AD%8F-01ab90161/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/p/1005053602843641" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+        --></a>
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hongxu's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+</script>
+
+                </main>
+            </div>
+             
+                <!-- PWA JS File -->
+                <script>
+                    if(navigator.serviceWorker != null) {
+                        window.addEventListener('DOMContentLoaded', function() {
+                            // 执行注册
+                            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+
+                            }).catch(function(err) {
+                                // Eat it!
+                            });
+                        });
+                    }
+                </script>
+            
+        </body>
+    
+</html>
