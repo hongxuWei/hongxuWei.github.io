@@ -103,7 +103,7 @@ const packageJson = require('./package.json');
 使用 [commander](https://github.com/tj/commander.js) 做命令行工具
 
 ```javascript
-// 这段代码只是对该工具可以用哪些方法做一个声明和初始
+// 这段代码只是对该工具可以用哪些方法做一个声明和初始化
 
 let projectName;
 
@@ -183,21 +183,32 @@ createApp(
 
 那么下面我们看看 creatApp 这个函数里面做了什么吧
 
+
 ```javascript
 function createApp(
+  // 项目名称
   name,
+  // 是否打印附加 log 信息
   verbose,
+  // 版本
   version,
+  // 是否使用 npm
   useNpm,
+  // 是否使用 Yarn Plug'n'Play
   usePnp,
+  // 是否使用 ts
   useTypescript,
+  // 模板
   template
 ) {
   const root = path.resolve(name);
   const appName = path.basename(root);
-
-  checkAppName(appName);】
+  // 检测名称是否合法
+  checkAppName(appName);
+  // 具体实现 -> node-fs-extra/lib/mkdirs/mkdirs-sync.js
+  // 总之就是如果该目录不存在就创建一个
   fs.ensureDirSync(name);
+  // 判断该目录下是否已有一些冲突文件，如果有就认为覆盖现有文件有风险，就退出
   if (!isSafeToCreateProjectIn(root, name)) {
     process.exit(1);
   }
@@ -210,11 +221,12 @@ function createApp(
     version: '0.1.0',
     private: true,
   };
+  // 写入 package.json
   fs.writeFileSync(
     path.join(root, 'package.json'),
     JSON.stringify(packageJson, null, 2) + os.EOL
   );
-
+  // useYarn 和 useNpm 不传的话
   const useYarn = useNpm ? false : shouldUseYarn();
   const originalDirectory = process.cwd();
   process.chdir(root);
@@ -300,3 +312,12 @@ function createApp(
   );
 }
 ```
+
+
+
+
+
+
+
+这里我不知道的知识
+**拓展 [Yarn Plug'n'Play](https://yarn.bootcss.com/docs/pnp/)**
