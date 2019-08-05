@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            create-react-app 怎么这么 Diao! | 
+        
+        Hongxu&#39;s Blog
+    </title>
+
+    
+        <!-- PWA manifest -->
+        <link rel="manifest" href="/manifest.json">
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/icon .png">
+    <link rel="icon" href="/img/icon.png">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="魏红旭的Blog">
+    <meta name="keywords" content=",React 前端工程 create-react-app">
+    <meta name="theme-color" content="#00BCD4">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?PLcb3nZqoD+sQzt9XcAAVg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?1HNAkKNMjDG4DBqzfiUMXg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #00BCD4 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #00BCD4 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #00BCD4 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Hongxu&#39;s Blog">
+    <meta name="msapplication-starturl" content="https://hongxuWei.github.io/2019/08/02/前端/Create-React-App-为什么这么-diao/">
+    <meta name="msapplication-navbutton-color" content="#00BCD4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hongxu&#39;s Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/icon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://hongxuWei.github.io/2019/08/02/前端/Create-React-App-为什么这么-diao/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="create-react-app 怎么这么 Diao! | Hongxu&#39;s Blog">
+    <meta property="og:image" content="/img/icon.png">
+    <meta property="og:description" content="魏红旭的Blog">
+    <meta property="og:article:tag" content="React 前端工程 create-react-app"> 
+
+    
+        <meta property="article:published_time" content="Fri Aug 02 2019 12:00:00 GMT+0800">
+        <meta property="article:modified_time" content="Mon Aug 05 2019 14:51:15 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://hongxuWei.github.io/2019/08/02/前端/Create-React-App-为什么这么-diao/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://hongxuWei.github.io/2019/08/02/前端/Create-React-App-为什么这么-diao/index.html",
+    "headline": "create-react-app 怎么这么 Diao!",
+    "datePublished": "Fri Aug 02 2019 12:00:00 GMT+0800",
+    "dateModified": "Mon Aug 05 2019 14:51:15 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "Hongxu",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.jpeg"
+        },
+        "description": "欢迎来到 Hongxu 的 Blog"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Hongxu&#39;s Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/icon.png"
+        }
+    },
+    "keywords": ",React 前端工程 create-react-app",
+    "description": "魏红旭的Blog",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目录结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">目录结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一级目录结构"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">一级目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#packages-目录结构"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">packages 目录结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#create-react-app-目录结构"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">create-react-app 目录结构</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#create-react-app-源码解读"><span class="post-toc-number">3.</span> <span class="post-toc-text">create-react-app 源码解读</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#create-react-app-用法"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">create-react-app 用法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#create-rect-app-index-js"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">create-rect-app/index.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#create-rect-app-createReactApp-js"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">create-rect-app/createReactApp.js</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/img/Facebook.png)">
+    
+            <p class="article-headline-p">
+                create-react-app 怎么这么 Diao!
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.jpeg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Hongxu</strong>
+        <span>8月 02, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/React-前端工程-create-react-app/">React 前端工程 create-react-app</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=create-react-app 怎么这么 Diao!&url=https://hongxuWei.github.io/2019/08/02/前端/Create-React-App-为什么这么-diao/index.html&pic=https://hongxuWei.github.io/img/icon .png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://hongxuWei.github.io/2019/08/02/前端/Create-React-App-为什么这么-diao/index.html&title=create-react-app 怎么这么 Diao!" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Hongxu&#39;s Blog&title=create-react-app 怎么这么 Diao!&summary=魏红旭的Blog&pics=https://hongxuWei.github.io/img/icon .png&url=https://hongxuWei.github.io/2019/08/02/前端/Create-React-App-为什么这么-diao/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间自己做了一个前端脚手架工具 Zeus，通过 cli 命令去搭建前端框架，目前支持了 web, node 工具类，chrome 扩展插件等模板。<br>其实原理都是一样的，根据不同的配置去 down 不同的 template，以及执行相应的 script。在做的过程中发现模板的搭建还真不是一个容易的活，踩过了各种坑，但同时对 webpack, rollup 这些工具也有了深入的了解。所以就在想 <a href="https://facebook.github.io/create-react-app/" target="_blank" rel="noopener">create-react-app</a> 是如何实现类似功能的。</p>
+<p>这个系列打算从 create-react-app 着手去分析它的源码。希望自己能够坚持下去~</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><h4 id="一级目录结构"><a href="#一级目录结构" class="headerlink" title="一级目录结构"></a>一级目录结构</h4><p class="center"><img src="/2019/08/02/前端/Create-React-App-为什么这么-diao/tree_root.1.png" alt="一级目录结构"></p>
+
+<p>create-react-app 使用 <a href="https://lerna.js.org/" target="_blank" rel="noopener">Lerna</a> 管理前端 packages</p>
+<p>值得关注的代码在 packages 这个目录下面</p>
+<p>我们来看看 packages 里面都有什么</p>
+<h4 id="packages-目录结构"><a href="#packages-目录结构" class="headerlink" title="packages 目录结构"></a>packages 目录结构</h4><p class="center"><img src="/2019/08/02/前端/Create-React-App-为什么这么-diao/tree_root_packages.1.png" alt="packages 目录结构"></p>
+
+<p>这里有我们熟悉的 create-react-app 目录，其余的包也挺重要，比如 react-scripts 但是我们先找到入口再来看其他文件夹的作用吧。</p>
+<p>我们要找的入口就在 create-react-app 里面</p>
+<h4 id="create-react-app-目录结构"><a href="#create-react-app-目录结构" class="headerlink" title="create-react-app 目录结构"></a>create-react-app 目录结构</h4><p class="center"><img src="/2019/08/02/前端/Create-React-App-为什么这么-diao/tree_root_packages_create_react_app.1.png" alt="create-react-app 目录结构"></p>
+
+<h2 id="create-react-app-源码解读"><a href="#create-react-app-源码解读" class="headerlink" title="create-react-app 源码解读"></a>create-react-app 源码解读</h2><h3 id="create-react-app-用法"><a href="#create-react-app-用法" class="headerlink" title="create-react-app 用法"></a>create-react-app 用法</h3><p>在看源码之前，我们要先知道如何使用 creat-react-app 这样能够帮助我们快速理解各部分代码的作用。</p>
+<p class="center"><img src="/2019/08/02/前端/Create-React-App-为什么这么-diao/how-to-use.png" alt="how to use"></p>
+
+<p>可以看到用法就是 <code>create-react-app &lt;project-directory&gt; [options]</code></p>
+<p>非常的简单易用，而且各参数的作用简单易懂，一看就知道怎么使用，命名非常的好。</p>
+<h3 id="create-rect-app-index-js"><a href="#create-rect-app-index-js" class="headerlink" title="create-rect-app/index.js"></a>create-rect-app/index.js</h3><p>这是入口文件非常简明，就是判断当前 node 版本，如果主版本低于 8 就输出一段错误提示信息，并终止进程。并返回 1 作为退出码。<em>(Linux 系统中只有 0 是成功码，其余的退出码都表示进程没有按预期执行成功)</em><br>如果主版本适配，那么就执行 creatReactApp 里的代码</p>
+<pre><code class="javascript">var currentNodeVersion = process.versions.node;
+var semver = currentNodeVersion.split(&#39;.&#39;);
+var major = semver[0];
+
+if (major &lt; 8) {
+  console.error(
+    &#39;You are running Node &#39; +
+      currentNodeVersion +
+      &#39;.\n&#39; +
+      &#39;Create React App requires Node 8 or higher. \n&#39; +
+      &#39;Please update your version of Node.&#39;
+  );
+  process.exit(1);
+}
+
+require(&#39;./createReactApp&#39;);
+</code></pre>
+<h3 id="create-rect-app-createReactApp-js"><a href="#create-rect-app-createReactApp-js" class="headerlink" title="create-rect-app/createReactApp.js"></a>create-rect-app/createReactApp.js</h3><p>这里的代码就有点多了，不能把全部都给粘上来。我们一步步分析。</p>
+<pre><code class="javascript">const chalk = require(&#39;chalk&#39;);
+const commander = require(&#39;commander&#39;);
+const dns = require(&#39;dns&#39;);
+const envinfo = require(&#39;envinfo&#39;);
+const execSync = require(&#39;child_process&#39;).execSync;
+const fs = require(&#39;fs-extra&#39;);
+const hyperquest = require(&#39;hyperquest&#39;);
+const inquirer = require(&#39;inquirer&#39;);
+const os = require(&#39;os&#39;);
+const path = require(&#39;path&#39;);
+const semver = require(&#39;semver&#39;);
+const spawn = require(&#39;cross-spawn&#39;);
+const tmp = require(&#39;tmp&#39;);
+const unpack = require(&#39;tar-pack&#39;).unpack;
+const url = require(&#39;url&#39;);
+const validateProjectName = require(&#39;validate-npm-package-name&#39;);
+
+const packageJson = require(&#39;./package.json&#39;);
+</code></pre>
+<p>这里我们忽略头上的包的引用，直接看代码</p>
+<p>使用 <a href="https://github.com/tj/commander.js" target="_blank" rel="noopener">commander</a> 做命令行工具</p>
+<pre><code class="javascript">// 这段代码只是对该工具可以用哪些方法做一个声明和初始化
+
+let projectName;
+
+const program = new commander.Command(packageJson.name)
+  // 版本号
+  .version(packageJson.version)
+  .arguments(&#39;&lt;project-directory&gt;&#39;)
+  // 申明使用方法
+  .usage(`${chalk.green(&#39;&lt;project-directory&gt;&#39;)} [options]`)
+  .action(name =&gt; {
+    // 这里的 name 就是使用 create-react-app 传入的 &lt;project-directory&gt;
+    projectName = name;
+  })
+  // 申明 option 信息
+  .option(&#39;--verbose&#39;, &#39;print additional logs&#39;)
+  .option(&#39;--info&#39;, &#39;print environment debug info&#39;)
+  .option(
+    &#39;--scripts-version &lt;alternative-package&gt;&#39;,
+    &#39;use a non-standard version of react-scripts&#39;
+  )
+  .option(&#39;--use-npm&#39;)
+  .option(&#39;--use-pnp&#39;)
+  .option(&#39;--typescript&#39;)
+  .allowUnknownOption()
+  // 帮助信息
+  .on(&#39;--help&#39;, () =&gt; {/* 省略...  */})
+  .parse(process.argv);
+
+// 如果使用了 --info 参数就输出系统信息且不创建项目并返回
+if (program.info) {
+  console.log(chalk.bold(&#39;\nEnvironment Info:&#39;));
+  return envinfo
+    .run(
+      {
+        System: [&#39;OS&#39;, &#39;CPU&#39;],
+        Binaries: [&#39;Node&#39;, &#39;npm&#39;, &#39;Yarn&#39;],
+        Browsers: [&#39;Chrome&#39;, &#39;Edge&#39;, &#39;Internet Explorer&#39;, &#39;Firefox&#39;, &#39;Safari&#39;],
+        npmPackages: [&#39;react&#39;, &#39;react-dom&#39;, &#39;react-scripts&#39;],
+        npmGlobalPackages: [&#39;create-react-app&#39;],
+      },
+      {
+        duplicates: true,
+        showNotFound: true,
+      }
+    )
+    .then(console.log);
+}
+
+// 如果没哟输入项目名称就提示如何使用并退出(退出码为 1)
+if (typeof projectName === &#39;undefined&#39;) {
+  /* 省略... */
+  process.exit(1);
+}
+
+// 这申明了一个内部程序，当 --scripts-version 选项使用时才出发相应的操作
+// 可以下载自定义的模板文件
+const hiddenProgram = new commander.Command()
+  .option(
+    &#39;--internal-testing-template &lt;path-to-template&gt;&#39;,
+    &#39;(internal usage only, DO NOT RELY ON THIS) &#39; +
+      &#39;use a non-standard application template&#39;
+  )
+  .parse(process.argv);
+
+
+// 这里才是 creat-react-app 处理完输入参数后执行的函数，可以看到它吧相关参数信息都传到这个函数里的
+createApp(
+  projectName,
+  program.verbose,
+  program.scriptsVersion,
+  program.useNpm,
+  program.usePnp,
+  program.typescript,
+  hiddenProgram.internalTestingTemplate
+);
+</code></pre>
+<p>那么下面我们看看 creatApp 这个函数里面做了什么吧</p>
+<pre><code class="javascript">function createApp(
+  // 项目名称
+  name,
+  // 是否打印附加 log 信息
+  verbose,
+  // script 版本
+  version,
+  // 是否使用 npm
+  useNpm,
+  // 是否使用 Yarn Plug&#39;n&#39;Play
+  usePnp,
+  // 是否使用 ts
+  useTypescript,
+  // 模板
+  template
+) {
+  const root = path.resolve(name);
+  const appName = path.basename(root);
+  // 检测名称是否合法
+  checkAppName(appName);
+  // 具体实现 -&gt; node-fs-extra/lib/mkdirs/mkdirs-sync.js
+  // 总之就是如果该目录不存在就创建一个
+  fs.ensureDirSync(name);
+  // 判断该目录下是否已有一些冲突文件，如果有就认为覆盖现有文件有风险，就退出
+  if (!isSafeToCreateProjectIn(root, name)) {
+    process.exit(1);
+  }
+
+  console.log(`Creating a new React app in ${chalk.green(root)}.`);
+  console.log();
+
+  const packageJson = {
+    name: appName,
+    version: &#39;0.1.0&#39;,
+    private: true,
+  };
+  // 写入 package.json
+  fs.writeFileSync(
+    path.join(root, &#39;package.json&#39;),
+    JSON.stringify(packageJson, null, 2) + os.EOL
+  );
+  // useYarn 和 useNpm 不传的话就优先使用 yarn
+  const useYarn = useNpm ? false : shouldUseYarn();
+  const originalDirectory = process.cwd();
+  process.chdir(root);
+  // 如果不适用 yarn 且 npm 无法读取 cwd 就退出
+  if (!useYarn &amp;&amp; !checkThatNpmCanReadCwd()) {
+    process.exit(1);
+  }
+  // 判断当前 node 版本 如果低于 8.10.0 就使用 0.9.x 版本的 react-script
+  if (!semver.satisfies(process.version, &#39;&gt;=8.10.0&#39;)) {
+    console.log(
+      chalk.yellow(
+        `You are using Node ${
+          process.version
+        } so the project will be bootstrapped with an old unsupported version of tools.\n\n` +
+          `Please update to Node 8.10 or higher for a better, fully supported experience.\n`
+      )
+    );
+    // Fall back to latest supported react-scripts on Node 4
+    version = &#39;react-scripts@0.9.x&#39;;
+  }
+
+  if (!useYarn) {
+    const npmInfo = checkNpmVersion();
+    // 当前 npm 版本低于 5.0.0
+    if (!npmInfo.hasMinNpm) {
+      if (npmInfo.npmVersion) {
+        console.log(
+          chalk.yellow(
+            `You are using npm ${
+              npmInfo.npmVersion
+            } so the project will be bootstrapped with an old unsupported version of tools.\n\n` +
+              `Please update to npm 5 or higher for a better, fully supported experience.\n`
+          )
+        );
+      }
+      // Fall back to latest supported react-scripts for npm 3
+      version = &#39;react-scripts@0.9.x&#39;;
+    }
+  } else if (usePnp) {
+    const yarnInfo = checkYarnVersion();
+    // yarn 版本低于 1.12.0
+    if (!yarnInfo.hasMinYarnPnp) {
+      if (yarnInfo.yarnVersion) {
+        console.log(
+          chalk.yellow(
+            `You are using Yarn ${
+              yarnInfo.yarnVersion
+            } together with the --use-pnp flag, but Plug&#39;n&#39;Play is only supported starting from the 1.12 release.\n\n` +
+              `Please update to Yarn 1.12 or higher for a better, fully supported experience.\n`
+          )
+        );
+      }
+      // 1.11 had an issue with webpack-dev-middleware, so better not use PnP with it (never reached stable, but still)
+      usePnp = false;
+    }
+  }
+
+  if (useYarn) {
+    let yarnUsesDefaultRegistry = true;
+    try {
+      yarnUsesDefaultRegistry =
+        execSync(&#39;yarnpkg config get registry&#39;)
+          .toString()
+          .trim() === &#39;https://registry.yarnpkg.com&#39;;
+    } catch (e) {
+      // ignore
+    }
+    if (yarnUsesDefaultRegistry) {
+      fs.copySync(
+        require.resolve(&#39;./yarn.lock.cached&#39;),
+        path.join(root, &#39;yarn.lock&#39;)
+      );
+    }
+  }
+  // run ? 原来这才是真正处理操作的地方？
+  // createApp 只是处理一些 npm yarn 版本等操作？让我们接着看下去这个 run 是什么
+  run(
+    root,
+    appName,
+    version,
+    verbose,
+    originalDirectory,
+    template,
+    useYarn,
+    usePnp,
+    useTypescript
+  );
+}
+</code></pre>
+<p>下面就是 run 函数啦</p>
+<pre><code class="javascript">function run(
+  root,
+  appName,
+  version,
+  verbose,
+  originalDirectory,
+  template,
+  useYarn,
+  usePnp,
+  useTypescript
+) {
+  getInstallPackage(version, originalDirectory).then(packageToInstall =&gt; {
+    /* balabala 省略 */
+  });
+}
+</code></pre>
+<p>啊，什么。run 里面就先执行了一个 <code>getInstallPackage</code> 函数，该函数 resolve 后再执行相应的内容。</p>
+<p>那就继续 go! 先看看 <code>getInstallPackage</code> 再回头看看 balabala 里的内容吧</p>
+<pre><code class="javascript">/*
+ * 这里两个参数 version 表示的是 script 版本，可能是自带的 react-script 也可能是自定义的 git 地址等
+ * originalDirectory 表示的是 proces.cwd() 即当前命令执行的目录
+ */
+function getInstallPackage(version, originalDirectory) {
+  let packageToInstall = &#39;react-scripts&#39;;
+  // 处理要安装的包是哪一种
+  const validSemver = semver.valid(version);
+  if (validSemver) {
+    packageToInstall += `@${validSemver}`;
+  } else if (version) {
+    if (version[0] === &#39;@&#39; &amp;&amp; version.indexOf(&#39;/&#39;) === -1) {
+      packageToInstall += version;
+    } else if (version.match(/^file:/)) {
+      packageToInstall = `file:${path.resolve(
+        originalDirectory,
+        version.match(/^file:(.*)?$/)[1]
+      )}`;
+    } else {
+      // for tar.gz or alternative paths
+      packageToInstall = version;
+    }
+  }
+
+  const scriptsToWarn = [
+    {
+      name: &#39;react-scripts-ts&#39;,
+      message: chalk.yellow(
+        &#39;The react-scripts-ts package is deprecated. TypeScript is now supported natively in Create React App. You can use the --typescript option instead when generating your app to include TypeScript support. Would you like to continue using react-scripts-ts?&#39;
+      ),
+    },
+  ];
+
+  for (const script of scriptsToWarn) {
+    // 如果以 react-scripts-ts 开头的包就告诉用户 create-react-app 已经支持加 --typescript 参数就可以用
+    // 问是不是还要继续使用自定义的 react-scripts-ts 包如果反馈是是就继续下载，如果反馈是否程序正常结束退出不做任何工作。
+    if (packageToInstall.startsWith(script.name)) {
+      return inquirer
+        .prompt({
+          type: &#39;confirm&#39;,
+          name: &#39;useScript&#39;,
+          message: script.message,
+          default: false,
+        })
+        .then(answer =&gt; {
+          if (!answer.useScript) {
+            process.exit(0);
+          }
+
+          return packageToInstall;
+        });
+    }
+  }
+
+  // 这里把要安装的包给 resolve 出去
+  return Promise.resolve(packageToInstall);
+}
+</code></pre>
+<p>ok, 看到这里大概知道了 getInstallPackage 这个函数就是根据参数将要下载的包名称返回而已。<br>那继续看看 run 函数 getInstallPackage 的 then 里面是什么操作吧。</p>
+<pre><code class="javascript">function run(
+  root,
+  appName,
+  version,
+  verbose,
+  originalDirectory,
+  template,
+  useYarn,
+  usePnp,
+  useTypescript
+) {
+  getInstallPackage(version, originalDirectory).then(packageToInstall =&gt; {
+    // 这里包含所有的依赖项
+    const allDependencies = [&#39;react&#39;, &#39;react-dom&#39;, packageToInstall];
+    // 如果用了 ts 要额外装一些包
+    if (useTypescript) {
+      // 看到这里，哈哈哈哈，原来不管哪里的程序员都爱记 TODO
+      // 可以看到未来 create-react-app 会根据 node 和 jest 去安装对应的 types
+      allDependencies.push(
+        // TODO: get user&#39;s node version instead of installing latest
+        &#39;@types/node&#39;,
+        &#39;@types/react&#39;,
+        &#39;@types/react-dom&#39;,
+        // TODO: get version of Jest being used instead of installing latest
+        &#39;@types/jest&#39;,
+        &#39;typescript&#39;
+      );
+    }
+
+    console.log(&#39;Installing packages. This might take a couple of minutes.&#39;);
+    /*
+     * getPackageName 就是根据 packageToInstall 判断是那种类型的包
+     * tgz|tar.gz 的压缩包
+     * git 仓库
+     * @version or @tag 类型的
+     * file: 本地文件名类型的
+     */
+    getPackageName(packageToInstall)
+      .then(packageName =&gt;
+        // 检查是否在线
+        checkIfOnline(useYarn).then(isOnline =&gt; ({
+          isOnline: isOnline,
+          packageName: packageName,
+        }))
+      )
+      .then(info =&gt; {
+        const isOnline = info.isOnline;
+        const packageName = info.packageName;
+        console.log(
+          `Installing ${chalk.cyan(&#39;react&#39;)}, ${chalk.cyan(
+            &#39;react-dom&#39;
+          )}, and ${chalk.cyan(packageName)}...`
+        );
+        console.log();
+        // 开始安装对应的包
+        return install(
+          root,
+          useYarn,
+          usePnp,
+          allDependencies,
+          verbose,
+          isOnline
+        ).then(() =&gt; packageName);
+      })
+      .then(async packageName =&gt; {
+        // 检查当前 node 版本是否符合下载的包的 package.json 中要求的 node 版本
+        checkNodeVersion(packageName);
+        // 设置 react react-dom 版本为带 ^ 的版本号
+        setCaretRangeForRuntimeDeps(packageName);
+
+        const pnpPath = path.resolve(process.cwd(), &#39;.pnp.js&#39;);
+
+        const nodeArgs = fs.existsSync(pnpPath) ? [&#39;--require&#39;, pnpPath] : [];
+        // 执行下载好的文件内的 init 脚本
+        await executeNodeScript(
+          {
+            cwd: process.cwd(),
+            args: nodeArgs,
+          },
+          [root, appName, verbose, originalDirectory, template],
+          `
+        var init = require(&#39;${packageName}/scripts/init.js&#39;);
+        init.apply(null, JSON.parse(process.argv[1]));
+      `
+        );
+
+        if (version === &#39;react-scripts@0.9.x&#39;) {
+          console.log(
+            chalk.yellow(
+              `\nNote: the project was bootstrapped with an old unsupported version of tools.\n` +
+                `Please update to Node &gt;=8.10 and npm &gt;=5 to get supported tools in new projects.\n`
+            )
+          );
+        }
+      })
+      .catch(reason =&gt; {
+        console.log();
+        console.log(&#39;Aborting installation.&#39;);
+        if (reason.command) {
+          console.log(`  ${chalk.cyan(reason.command)} has failed.`);
+        } else {
+          console.log(
+            chalk.red(&#39;Unexpected error. Please report it as a bug:&#39;)
+          );
+          console.log(reason);
+        }
+        console.log();
+
+        // On &#39;exit&#39; we will delete these files from target directory.
+        // exit 前删除目标文件夹内的文件列表
+        const knownGeneratedFiles = [
+          &#39;package.json&#39;,
+          &#39;yarn.lock&#39;,
+          &#39;node_modules&#39;,
+        ];
+        const currentFiles = fs.readdirSync(path.join(root));
+        currentFiles.forEach(file =&gt; {
+          knownGeneratedFiles.forEach(fileToMatch =&gt; {
+            // This removes all knownGeneratedFiles.
+            if (file === fileToMatch) {
+              console.log(`Deleting generated file... ${chalk.cyan(file)}`);
+              fs.removeSync(path.join(root, file));
+            }
+          });
+        });
+        const remainingFiles = fs.readdirSync(path.join(root));
+        if (!remainingFiles.length) {
+          // Delete target folder if empty
+          console.log(
+            `Deleting ${chalk.cyan(`${appName}/`)} from ${chalk.cyan(
+              path.resolve(root, &#39;..&#39;)
+            )}`
+          );
+          process.chdir(path.resolve(root, &#39;..&#39;));
+          fs.removeSync(path.join(root));
+        }
+        console.log(&#39;Done.&#39;);
+        process.exit(1);
+      });
+  });
+}
+</code></pre>
+<p>嗯，看到这里发现自己写的 Zeus 项目和 create-react-app 的思路是非常的像的。</p>
+<p>creat-react-app 和 Zeus 都是分为两个部分，一个是命令部分，一个是模板 template 部分。然后通过命令去交互式询问并下载相应的 template。</p>
+<p>只不过 Zeus 不支持自定义的模板，但优势就是比 creat-react-app 有更加友好的交互方式，遇到无法处理的情况会询问用户来选择如何处理。（比如目标目录已经存在 creat-react-app 会自动退出，而 Zeus 会询问用户是覆盖还是主动修改名称或者取消）这带给了用户更好的体验，还是会在未来写脚本的时候带来麻烦？这就看具体的使用场景了。至少目前使用 Zeus 下来还是不错的。</p>
+<p>这个系列下一篇会分析 react-script 这个目录下的文件。这里面包含了模板文件，同时也让我们看看 create-react-app 是如何写 webpack 的吧。</p>
+<p>这里是我不知道的知识点<br><strong>拓展 <a href="https://yarn.bootcss.com/docs/pnp/" target="_blank" rel="noopener">Yarn Plug’n’Play</a></strong></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 Gitalk -->
+<div id="gitalk-comment">
+    <!-- Gitalk 评论框 -->
+<div id="gitalk-container"></div>
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<script>
+    var gitalk = new Gitalk({
+            id: "create-react-app 怎么这么 Diao!20190802",
+            clientID: '68a5215ea19e888dcfd5',
+            clientSecret: '51f45b58b869b9f474530ca3621d17d927cb5d37',
+            repo: 'hongxuWei.github.io',
+            owner: 'hongxuWei',
+            admin: ['hongxuWei'],
+            // facebook-like distraction free mode
+            distractionFreeMode: false
+        })
+   gitalk.render('gitalk-container')
+</script>
+</div>
+<style>
+    #gitalk-comment {
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/07/31/算法/链表2/" id="post_nav-older" class="next-content">
+            上一篇文章
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.jpeg" alt="Hongxu's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        hongxu.wei@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:hongxu.wei@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/demo/" title="例子">
+                
+                    <i class="material-icons sidebar-material-icons">code</i>
+                
+                例子
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tags/" title="标签云">
+                
+                    <i class="material-icons sidebar-material-icons">cloud_queue</i>
+                
+                标签云
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline/" title="时间轴">
+                
+                    <i class="material-icons sidebar-material-icons">event</i>
+                
+                时间轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links/" title="友链">
+                
+                    <i class="material-icons sidebar-material-icons">thumb_up_alt</i>
+                
+                友链
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/hongxuWei/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+        <a href="http://www.linkedin.com/in/%E7%BA%A2%E6%97%AD-%E9%AD%8F-01ab90161/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-linkedin">
+                <span class="visuallyhidden">LinkedIn</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+        <a href="https://weibo.com/p/1005053602843641" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-weibo">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+        --></a>
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Hongxu's Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- GitTalk -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+</script>
+
+                </main>
+            </div>
+             
+                <!-- PWA JS File -->
+                <script>
+                    if(navigator.serviceWorker != null) {
+                        window.addEventListener('DOMContentLoaded', function() {
+                            // 执行注册
+                            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+
+                            }).catch(function(err) {
+                                // Eat it!
+                            });
+                        });
+                    }
+                </script>
+            
+        </body>
+    
+</html>
