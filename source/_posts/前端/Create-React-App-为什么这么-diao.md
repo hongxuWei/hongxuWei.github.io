@@ -190,7 +190,7 @@ function createApp(
   name,
   // 是否打印附加 log 信息
   verbose,
-  // 版本
+  // script 版本
   version,
   // 是否使用 npm
   useNpm,
@@ -226,14 +226,15 @@ function createApp(
     path.join(root, 'package.json'),
     JSON.stringify(packageJson, null, 2) + os.EOL
   );
-  // useYarn 和 useNpm 不传的话
+  // useYarn 和 useNpm 不传的话就优先使用 yarn
   const useYarn = useNpm ? false : shouldUseYarn();
   const originalDirectory = process.cwd();
   process.chdir(root);
+  // 如果不适用 yarn 且 npm 无法读取 cwd 就退出
   if (!useYarn && !checkThatNpmCanReadCwd()) {
     process.exit(1);
   }
-
+  // 判断当前 node 版本 如果低于 8.10.0 就使用 0.9.x 版本的 react-script
   if (!semver.satisfies(process.version, '>=8.10.0')) {
     console.log(
       chalk.yellow(
@@ -249,6 +250,7 @@ function createApp(
 
   if (!useYarn) {
     const npmInfo = checkNpmVersion();
+    // 当前 npm 版本低于 5.0.0
     if (!npmInfo.hasMinNpm) {
       if (npmInfo.npmVersion) {
         console.log(
@@ -265,6 +267,7 @@ function createApp(
     }
   } else if (usePnp) {
     const yarnInfo = checkYarnVersion();
+    // yarn 版本低于 1.12.0
     if (!yarnInfo.hasMinYarnPnp) {
       if (yarnInfo.yarnVersion) {
         console.log(
@@ -298,7 +301,8 @@ function createApp(
       );
     }
   }
-
+  // run ? 原来这才是真正处理操作的地方？
+  // createApp 只是处理一些 npm yarn 版本等操作？让我们接着看下去这个 run 是什么
   run(
     root,
     appName,
@@ -313,11 +317,244 @@ function createApp(
 }
 ```
 
+下面就是 run 函数啦
 
+```javascript
+function run(
+  root,
+  appName,
+  version,
+  verbose,
+  originalDirectory,
+  template,
+  useYarn,
+  usePnp,
+  useTypescript
+) {
+  getInstallPackage(version, originalDirectory).then(packageToInstall => {
+    /* balabala 省略 */
+  });
+}
+```
 
+啊，什么。run 里面就先执行了一个 `getInstallPackage` 函数，该函数 resolve 后再执行相应的内容。
 
+那就继续 go! 先看看 `getInstallPackage` 再回头看看 balabala 里的内容吧
 
+```javascript
+/*
+ * 这里两个参数 version 表示的是 script 版本，可能是自带的 react-script 也可能是自定义的 git 地址等
+ * originalDirectory 表示的是 proces.cwd() 即当前命令执行的目录
+ */
+function getInstallPackage(version, originalDirectory) {
+  let packageToInstall = 'react-scripts';
+  // 处理要安装的包是哪一种
+  const validSemver = semver.valid(version);
+  if (validSemver) {
+    packageToInstall += `@${validSemver}`;
+  } else if (version) {
+    if (version[0] === '@' && version.indexOf('/') === -1) {
+      packageToInstall += version;
+    } else if (version.match(/^file:/)) {
+      packageToInstall = `file:${path.resolve(
+        originalDirectory,
+        version.match(/^file:(.*)?$/)[1]
+      )}`;
+    } else {
+      // for tar.gz or alternative paths
+      packageToInstall = version;
+    }
+  }
 
+  const scriptsToWarn = [
+    {
+      name: 'react-scripts-ts',
+      message: chalk.yellow(
+        'The react-scripts-ts package is deprecated. TypeScript is now supported natively in Create React App. You can use the --typescript option instead when generating your app to include TypeScript support. Would you like to continue using react-scripts-ts?'
+      ),
+    },
+  ];
 
-这里我不知道的知识
+  for (const script of scriptsToWarn) {
+    // 如果以 react-scripts-ts 开头的包就告诉用户 create-react-app 已经支持加 --typescript 参数就可以用
+    // 问是不是还要继续使用自定义的 react-scripts-ts 包如果反馈是是就继续下载，如果反馈是否程序正常结束退出不做任何工作。
+    if (packageToInstall.startsWith(script.name)) {
+      return inquirer
+        .prompt({
+          type: 'confirm',
+          name: 'useScript',
+          message: script.message,
+          default: false,
+        })
+        .then(answer => {
+          if (!answer.useScript) {
+            process.exit(0);
+          }
+
+          return packageToInstall;
+        });
+    }
+  }
+
+  // 这里把要安装的包给 resolve 出去
+  return Promise.resolve(packageToInstall);
+}
+```
+
+ok, 看到这里大概知道了 getInstallPackage 这个函数就是根据参数将要下载的包名称返回而已。
+那继续看看 run 函数 getInstallPackage 的 then 里面是什么操作吧。
+
+```javascript
+function run(
+  root,
+  appName,
+  version,
+  verbose,
+  originalDirectory,
+  template,
+  useYarn,
+  usePnp,
+  useTypescript
+) {
+  getInstallPackage(version, originalDirectory).then(packageToInstall => {
+    // 这里包含所有的依赖项
+    const allDependencies = ['react', 'react-dom', packageToInstall];
+    // 如果用了 ts 要额外装一些包
+    if (useTypescript) {
+      // 看到这里，哈哈哈哈，原来不管哪里的程序员都爱记 TODO
+      // 可以看到未来 create-react-app 会根据 node 和 jest 去安装对应的 types
+      allDependencies.push(
+        // TODO: get user's node version instead of installing latest
+        '@types/node',
+        '@types/react',
+        '@types/react-dom',
+        // TODO: get version of Jest being used instead of installing latest
+        '@types/jest',
+        'typescript'
+      );
+    }
+
+    console.log('Installing packages. This might take a couple of minutes.');
+    /*
+     * getPackageName 就是根据 packageToInstall 判断是那种类型的包
+     * tgz|tar.gz 的压缩包
+     * git 仓库
+     * @version or @tag 类型的
+     * file: 本地文件名类型的
+     */
+    getPackageName(packageToInstall)
+      .then(packageName =>
+        // 检查是否在线
+        checkIfOnline(useYarn).then(isOnline => ({
+          isOnline: isOnline,
+          packageName: packageName,
+        }))
+      )
+      .then(info => {
+        const isOnline = info.isOnline;
+        const packageName = info.packageName;
+        console.log(
+          `Installing ${chalk.cyan('react')}, ${chalk.cyan(
+            'react-dom'
+          )}, and ${chalk.cyan(packageName)}...`
+        );
+        console.log();
+        // 开始安装对应的包
+        return install(
+          root,
+          useYarn,
+          usePnp,
+          allDependencies,
+          verbose,
+          isOnline
+        ).then(() => packageName);
+      })
+      .then(async packageName => {
+        // 检查当前 node 版本是否符合下载的包的 package.json 中要求的 node 版本
+        checkNodeVersion(packageName);
+        // 设置 react react-dom 版本为带 ^ 的版本号
+        setCaretRangeForRuntimeDeps(packageName);
+
+        const pnpPath = path.resolve(process.cwd(), '.pnp.js');
+
+        const nodeArgs = fs.existsSync(pnpPath) ? ['--require', pnpPath] : [];
+        // 执行下载好的文件内的 init 脚本
+        await executeNodeScript(
+          {
+            cwd: process.cwd(),
+            args: nodeArgs,
+          },
+          [root, appName, verbose, originalDirectory, template],
+          `
+        var init = require('${packageName}/scripts/init.js');
+        init.apply(null, JSON.parse(process.argv[1]));
+      `
+        );
+
+        if (version === 'react-scripts@0.9.x') {
+          console.log(
+            chalk.yellow(
+              `\nNote: the project was bootstrapped with an old unsupported version of tools.\n` +
+                `Please update to Node >=8.10 and npm >=5 to get supported tools in new projects.\n`
+            )
+          );
+        }
+      })
+      .catch(reason => {
+        console.log();
+        console.log('Aborting installation.');
+        if (reason.command) {
+          console.log(`  ${chalk.cyan(reason.command)} has failed.`);
+        } else {
+          console.log(
+            chalk.red('Unexpected error. Please report it as a bug:')
+          );
+          console.log(reason);
+        }
+        console.log();
+
+        // On 'exit' we will delete these files from target directory.
+        // exit 前删除目标文件夹内的文件列表
+        const knownGeneratedFiles = [
+          'package.json',
+          'yarn.lock',
+          'node_modules',
+        ];
+        const currentFiles = fs.readdirSync(path.join(root));
+        currentFiles.forEach(file => {
+          knownGeneratedFiles.forEach(fileToMatch => {
+            // This removes all knownGeneratedFiles.
+            if (file === fileToMatch) {
+              console.log(`Deleting generated file... ${chalk.cyan(file)}`);
+              fs.removeSync(path.join(root, file));
+            }
+          });
+        });
+        const remainingFiles = fs.readdirSync(path.join(root));
+        if (!remainingFiles.length) {
+          // Delete target folder if empty
+          console.log(
+            `Deleting ${chalk.cyan(`${appName}/`)} from ${chalk.cyan(
+              path.resolve(root, '..')
+            )}`
+          );
+          process.chdir(path.resolve(root, '..'));
+          fs.removeSync(path.join(root));
+        }
+        console.log('Done.');
+        process.exit(1);
+      });
+  });
+}
+```
+
+嗯，看到这里发现自己写的 Zeus 项目和 create-react-app 的思路是非常的像的。
+
+creat-react-app 和 Zeus 都是分为两个部分，一个是命令部分，一个是模板 template 部分。然后通过命令去交互式询问并下载相应的 template。
+
+只不过 Zeus 不支持自定义的模板，但优势就是比 creat-react-app 有更加友好的交互方式，遇到无法处理的情况会询问用户来选择如何处理。（比如目标目录已经存在 creat-react-app 会自动退出，而 Zeus 会询问用户是覆盖还是主动修改名称或者取消）这带给了用户更好的体验，还是会在未来写脚本的时候带来麻烦？这就看具体的使用场景了。至少目前使用 Zeus 下来还是不错的。
+
+这个系列下一篇会分析 react-script 这个目录下的文件。这里面包含了模板文件，同时也让我们看看 create-react-app 是如何写 webpack 的吧。
+
+这里是我不知道的知识点
 **拓展 [Yarn Plug'n'Play](https://yarn.bootcss.com/docs/pnp/)**

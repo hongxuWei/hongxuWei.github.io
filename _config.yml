@@ -81,7 +81,7 @@ deploy:
   type: git
   repo: https://github.com/hongxuWei/hongxuWei.github.io.git
   branch: master
-  message: 链表
+  message: create-react-app 为什么这么 Diao
 
 # Search
 search:
