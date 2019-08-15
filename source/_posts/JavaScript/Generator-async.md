@@ -6,7 +6,7 @@ categories: ES6 Generator async
 ---
 # Generator
 
-`Generator` 是 ES6 提出一种异步解决方案。
+`Generator` 是 ES6 提出的一种异步解决方案。
 
 形式上 Generator 函数和普通函数有两个不同点。
 * `function` 关键字和函数名之间有一个星号，如： `function* demo`;
@@ -34,7 +34,7 @@ Generator 函数就像一条马路，而 yield 是这条马路上的红绿灯路
 
 next 方法的运行逻辑有以下几点：
 * 遇到 `yield` 就暂停后面的操作，并将紧跟在 `yield` 后的表达式的值，作为返回对象的 `value` 属性值
-* 下次调用 `next` 方法是，再继续向下执行， 知道遇到下一个 `yield` 表达式或者 `return` 语句
+* 下次调用 `next` 方法是，再继续向下执行， 直到遇到下一个 `yield` 表达式或者 `return` 语句
 * 如果函数没有 `return` 语句，那么返回对象的 `value` 属性值为 `undefined`
 
 `yield` 和 `return` 的不同点在于，一个函数的 `return` 语句最多只能执行一次，而 `yield` 可以执行多次。 `yield` 会使函数暂停执行，下次执行的时候会从该位置继续向后执行，而 `return` 不具有记忆性。
